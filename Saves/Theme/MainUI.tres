@@ -1,0 +1,30 @@
+[gd_resource type="Theme" format=3 uid="uid://8x2otwdhs6w5"]
+
+[ext_resource type="FontFile" uid="uid://drhtif4f5mw2" path="res://Asset/Font/Ubuntu/Ubuntu-Regular.ttf" id="1_1q8o1"]
+[ext_resource type="FontVariation" uid="uid://cl1ghml6fsl2n" path="res://Asset/Font/tress_font/UiFont.tres" id="2_3hcpw"]
+
+[sub_resource type="FontVariation" id="FontVariation_apd1q"]
+base_font = ExtResource("1_1q8o1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xd07"]
+bg_color = Color(0.38039216, 0.654902, 0.6509804, 0.2509804)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq8tk"]
+bg_color = Color(0.38013926, 0.6561928, 0.65094644, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.5770082, 0.5770083, 0.5770093, 1)
+Button/fonts/font = SubResource("FontVariation_apd1q")
+ProgressBar/colors/font_color = Color(1, 1, 1, 1)
+ProgressBar/fonts/font = ExtResource("2_3hcpw")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_3xd07")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_jq8tk")

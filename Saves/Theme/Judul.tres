@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://04lir5pak1w"]
+
+[sub_resource type="FontVariation" id="FontVariation_jq8tk"]
+variation_embolden = 1.1
+
+[resource]
+font = SubResource("FontVariation_jq8tk")
+font_size = 28
+font_color = Color(0.26293245, 0.26293245, 0.26293245, 1)

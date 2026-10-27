@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bml4sh3myf050"]
+
+[ext_resource type="Theme" uid="uid://8x2otwdhs6w5" path="res://Saves/Theme/MainUI.tres" id="1_p4row"]
+[ext_resource type="Script" uid="uid://cfa53h2otyr60" path="res://Display/LogIn/Script/log_in.gd" id="2_i2dby"]
+[ext_resource type="LabelSettings" uid="uid://d21ptc017ufca" path="res://Saves/Theme/LabelTitle.tres" id="2_yv1gd"]
+
+[node name="LogIn" type="Control" unique_id=61337991]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p4row")
+script = ExtResource("2_i2dby")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1375432197]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5521, 0.5819679, 0.6072762, 1)
+
+[node name="LogIn" type="VBoxContainer" parent="." unique_id=1106285464]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.224
+anchor_top = 0.37300003
+anchor_right = 0.776
+anchor_bottom = 0.62700003
+offset_left = -0.11000061
+offset_top = 0.18798828
+offset_right = 0.10998535
+offset_bottom = 6.8119507
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LogIn" unique_id=1056811659]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Nutri App"
+label_settings = ExtResource("2_yv1gd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="LogIn" unique_id=1212599558]
+layout_mode = 2
+
+[node name="Email" type="TextEdit" parent="LogIn" unique_id=590697618]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Email"
+
+[node name="Password" type="TextEdit" parent="LogIn" unique_id=1825999497]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Password"
+
+[node name="HSeparator" type="HSeparator" parent="LogIn" unique_id=112233285]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="LogIn" unique_id=1957456318]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Log In"
+
+[connection signal="pressed" from="LogIn/Button" to="." method="_on_button_pressed"]
