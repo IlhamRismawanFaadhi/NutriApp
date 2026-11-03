@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvidrau4m6vqx"]
 
-[ext_resource type="Theme" uid="uid://8x2otwdhs6w5" path="res://Saves/Theme/MainUI.tres" id="1_8t24t"]
+[ext_resource type="Theme" uid="uid://15muj8tp0kn2" path="res://addons/gohud/themes/gohud_material_light.tres" id="1_ynj3n"]
 [ext_resource type="Texture2D" uid="uid://cfaf2lyv1xios" path="res://Asset/Icon/PNG/White/1x/home.png" id="2_jajw2"]
 [ext_resource type="Script" uid="uid://cna3drfwowmsh" path="res://Display/MainMenu/Script/main_menu.gd" id="2_wr31l"]
 [ext_resource type="Texture2D" uid="uid://7207282crapl" path="res://Asset/Icon/PNG/White/1x/zoom.png" id="3_wr31l"]
@@ -11,6 +11,11 @@
 [ext_resource type="FontFile" uid="uid://drhtif4f5mw2" path="res://Asset/Font/Ubuntu/Ubuntu-Regular.ttf" id="5_p3fls"]
 [ext_resource type="Texture2D" uid="uid://cpsxes26xdfqx" path="res://Asset/Icon/PNG/White/1x/singleplayer.png" id="6_p3fls"]
 [ext_resource type="FontVariation" uid="uid://cl1ghml6fsl2n" path="res://Asset/Font/tress_font/UiFont.tres" id="6_ynj3n"]
+[ext_resource type="Texture2D" uid="uid://cw2plgnuyavts" path="res://Asset/Image/NasiGoreng.jpg" id="7_ynj3n"]
+[ext_resource type="PackedScene" uid="uid://c4qmwpkrkhpb4" path="res://Component/FoodSuggestPanel/food_suggest_panel.tscn" id="8_pfg36"]
+[ext_resource type="Texture2D" uid="uid://dvledmi7sfa0n" path="res://Asset/Icon/PNG/Black/2x/singleplayer.png" id="9_ryh23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhunq"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_y86a1"]
 content_margin_left = 4.0
@@ -59,17 +64,30 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jq8tk"]
 
+[sub_resource type="FontVariation" id="FontVariation_qr0ht"]
+base_font = ExtResource("5_p3fls")
+variation_embolden = 0.75
+
 [sub_resource type="LabelSettings" id="LabelSettings_p3fls"]
+font = SubResource("FontVariation_qr0ht")
 font_size = 27
+font_color = Color(0.4451931, 0.42489886, 0.4758696, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_bhunq"]
+base_font = ExtResource("5_p3fls")
+variation_embolden = 1.45
 
 [sub_resource type="LabelSettings" id="LabelSettings_6fhyq"]
+font = SubResource("FontVariation_bhunq")
+font_color = Color(0.44705883, 0.42745098, 0.47843137, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq8tk"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 27
-corner_radius_top_right = 27
-shadow_color = Color(0, 0, 0, 0.3019608)
-shadow_size = 10
+[sub_resource type="FontVariation" id="FontVariation_riqys"]
+base_font = ExtResource("5_p3fls")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryh23"]
+font = SubResource("FontVariation_riqys")
+font_size = 12
+font_color = Color(0.36395833, 0.3469241, 0.39444435, 1)
 
 [node name="MainMenu" type="Control" unique_id=1747641759]
 layout_mode = 3
@@ -78,7 +96,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_8t24t")
+theme = ExtResource("1_ynj3n")
 script = ExtResource("2_wr31l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1134592368]
@@ -101,7 +119,7 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 11.65
+size_flags_stretch_ratio = 9.85
 
 [node name="Home" type="Control" parent="VBoxContainer/Display" unique_id=484896149]
 layout_mode = 1
@@ -111,97 +129,101 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home" unique_id=671407343]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Home" unique_id=91424177]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Display/Home/HBoxContainer" unique_id=187153180]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer" unique_id=671407343]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 293.45
 offset_transform_enabled = true
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer" unique_id=577346210]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer" unique_id=577346210]
 layout_mode = 2
 text = "Home"
 label_settings = ExtResource("3_y86a1")
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer" unique_id=393188913]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer" unique_id=393188913]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_y86a1")
 
-[node name="Control" type="Control" parent="VBoxContainer/Display/Home/VBoxContainer" unique_id=1074789234]
+[node name="Control" type="Control" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer" unique_id=1074789234]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Display/Home/VBoxContainer" unique_id=979487772]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer" unique_id=979487772]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer" unique_id=674543174]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=674543174]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1917417915]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1917417915]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_6fhyq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1118903542]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1118903542]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 42.1
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1249989287]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1249989287]
 custom_minimum_size = Vector2(0, 33.395)
 layout_mode = 2
 size_flags_stretch_ratio = 0.2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_qflxg")
 
-[node name="Progress" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=906788583]
+[node name="Progress" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1235161783]
 custom_minimum_size = Vector2(0, 163.87)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3xd07")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress" unique_id=1805682826]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.067
-offset_bottom = -13.400009
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress" unique_id=1805682826]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=967919555]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=967919555]
 layout_mode = 2
 text = "Progress"
 label_settings = ExtResource("4_n8jl1")
 
-[node name="SubJudul" type="Control" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=621081029]
+[node name="SubJudul" type="Control" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=621081029]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=666577177]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=666577177]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_3xd07")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=1051062938]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=1051062938]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Calories" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer" unique_id=305880492]
+[node name="Calories" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer" unique_id=305880492]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 75.76
 show_percentage = false
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer/Calories" unique_id=1183814327]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer/Calories" unique_id=1183814327]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.017
@@ -213,7 +235,7 @@ text = "Calories"
 label_settings = SubResource("LabelSettings_pfg36")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer/Calories" unique_id=1994968618]
+[node name="Label2" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer/Calories" unique_id=1994968618]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.017
@@ -225,13 +247,13 @@ text = "Calories"
 label_settings = SubResource("LabelSettings_pfg36")
 vertical_alignment = 1
 
-[node name="Protein" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer" unique_id=1177782880]
+[node name="Protein" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer" unique_id=1177782880]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 show_percentage = false
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer/Protein" unique_id=1356666960]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer/Protein" unique_id=1356666960]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.017
@@ -243,18 +265,18 @@ text = "Protein"
 label_settings = SubResource("LabelSettings_pfg36")
 vertical_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=1662915738]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=1662915738]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Crabs" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2" unique_id=1263900312]
+[node name="Crabs" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2" unique_id=1263900312]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 22.1
 show_percentage = false
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2/Crabs" unique_id=248048362]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2/Crabs" unique_id=248048362]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.017
@@ -266,13 +288,13 @@ text = "Crabs"
 label_settings = SubResource("LabelSettings_pfg36")
 vertical_alignment = 1
 
-[node name="Fat" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2" unique_id=676936904]
+[node name="Fat" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2" unique_id=676936904]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 show_percentage = false
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2/Fat" unique_id=935456490]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2/Fat" unique_id=935456490]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.017
@@ -284,13 +306,13 @@ text = "Fat"
 label_settings = SubResource("LabelSettings_pfg36")
 vertical_alignment = 1
 
-[node name="Water" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=622002801]
+[node name="Water" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=622002801]
 layout_mode = 2
 size_flags_vertical = 3
 value = 62.52
 show_percentage = false
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Water" unique_id=220885027]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Water" unique_id=220885027]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.017
@@ -302,405 +324,363 @@ text = "Water"
 label_settings = SubResource("LabelSettings_pfg36")
 vertical_alignment = 1
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=193253502]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=193253502]
 custom_minimum_size = Vector2(0, 32.525)
 layout_mode = 2
 size_flags_stretch_ratio = 0.2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_3xd07")
 
-[node name="Hydration" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1111739327]
+[node name="Hydration" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=918069313]
 custom_minimum_size = Vector2(0, 197.8)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3xd07")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration" unique_id=749339155]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration" unique_id=749339155]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=717569541]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=717569541]
 layout_mode = 2
 size_flags_vertical = 6
 text = "Dehidration"
 label_settings = ExtResource("4_n8jl1")
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=58707386]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=58707386]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.4
 theme_override_styles/separator = SubResource("StyleBoxLine_3xd07")
 
-[node name="Status" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=344500846]
+[node name="Status" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=344500846]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/Status" unique_id=518973026]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/Status" unique_id=518973026]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.3
 text = "0.00L / 2.50L"
 label_settings = SubResource("LabelSettings_3xd07")
 
-[node name="Button" type="Button" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/Status" unique_id=734723008]
+[node name="Button" type="Button" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/Status" unique_id=734723008]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset"
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=787495213]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=787495213]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jq8tk")
 
-[node name="AutoAdde" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1291499437]
+[node name="AutoAdde" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1291499437]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/AutoAdde" unique_id=1168947913]
+[node name="Button" type="Button" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/AutoAdde" unique_id=1168947913]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "+250 ml"
 
-[node name="Button2" type="Button" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/AutoAdde" unique_id=1990788871]
+[node name="Button2" type="Button" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/AutoAdde" unique_id=1990788871]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "+500 ml"
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=160743353]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=160743353]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jq8tk")
 
-[node name="ManualAdded" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1770643940]
+[node name="ManualAdded" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1770643940]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded" unique_id=1640305676]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded" unique_id=1640305676]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer" unique_id=1698876380]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer" unique_id=1698876380]
 layout_mode = 2
 text = "Drink amount (ml)"
 label_settings = SubResource("LabelSettings_pfg36")
 vertical_alignment = 1
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer" unique_id=437882224]
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer" unique_id=437882224]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded" unique_id=1070486978]
+[node name="Button" type="Button" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded" unique_id=1070486978]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Add"
 
-[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=912006053]
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=912006053]
 custom_minimum_size = Vector2(0, 32.525)
 layout_mode = 2
 size_flags_stretch_ratio = 0.2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_3xd07")
 
-[node name="Hydration2" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=94164417]
-custom_minimum_size = Vector2(0, 387.54)
+[node name="Hydration2" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=679827510]
+custom_minimum_size = Vector2(0, 450)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3xd07")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2" unique_id=570599406]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2" unique_id=570599406]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1259371991]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1259371991]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.35
 text = "Nutrition History"
 label_settings = ExtResource("4_n8jl1")
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/Label" unique_id=1528979577]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -4.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1528979577]
+layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.4
 theme_override_styles/separator = SubResource("StyleBoxLine_3xd07")
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=631134293]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=631134293]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jq8tk")
 
-[node name="AutoAdde" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1686730929]
+[node name="AutoAdde" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1686730929]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde" unique_id=2126822979]
+[node name="Panel" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde" unique_id=312770409]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel" unique_id=1083572577]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel" unique_id=1083572577]
+layout_mode = 2
 
-[node name="Value" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel/VBoxContainer" unique_id=1890944287]
+[node name="Value" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel/VBoxContainer" unique_id=1890944287]
 layout_mode = 2
 size_flags_vertical = 3
 text = "1.500"
 label_settings = SubResource("LabelSettings_p3fls")
 
-[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel/VBoxContainer" unique_id=2097016869]
+[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel/VBoxContainer" unique_id=2097016869]
 layout_mode = 2
 size_flags_vertical = 3
 text = "avrg"
 label_settings = SubResource("LabelSettings_6fhyq")
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde" unique_id=659049853]
+[node name="Panel2" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde" unique_id=226717835]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel2" unique_id=1263802158]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel2" unique_id=1263802158]
+layout_mode = 2
 
-[node name="Value" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel2/VBoxContainer" unique_id=886966340]
+[node name="Value" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel2/VBoxContainer" unique_id=886966340]
 layout_mode = 2
 size_flags_vertical = 3
 text = "1.500"
 label_settings = SubResource("LabelSettings_p3fls")
 
-[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel2/VBoxContainer" unique_id=26924223]
+[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde/Panel2/VBoxContainer" unique_id=26924223]
 layout_mode = 2
 size_flags_vertical = 3
 text = "avrg"
 label_settings = SubResource("LabelSettings_6fhyq")
 vertical_alignment = 1
 
-[node name="AutoAdde2" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=858728300]
+[node name="AutoAdde2" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=858728300]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2" unique_id=1800916446]
+[node name="Panel" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2" unique_id=1464408469]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel" unique_id=1063300447]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel" unique_id=1063300447]
+layout_mode = 2
 
-[node name="Value" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel/VBoxContainer" unique_id=1893103282]
+[node name="Value" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel/VBoxContainer" unique_id=1893103282]
 layout_mode = 2
 size_flags_vertical = 3
 text = "1.500"
 label_settings = SubResource("LabelSettings_p3fls")
 
-[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel/VBoxContainer" unique_id=355122654]
+[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel/VBoxContainer" unique_id=355122654]
 layout_mode = 2
 size_flags_vertical = 3
 text = "avrg"
 label_settings = SubResource("LabelSettings_6fhyq")
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2" unique_id=561757141]
+[node name="Panel2" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2" unique_id=1487631932]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel2" unique_id=35557805]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel2" unique_id=35557805]
+layout_mode = 2
 
-[node name="Value" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel2/VBoxContainer" unique_id=906664408]
+[node name="Value" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel2/VBoxContainer" unique_id=906664408]
 layout_mode = 2
 size_flags_vertical = 3
 text = "1.500"
 label_settings = SubResource("LabelSettings_p3fls")
 
-[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel2/VBoxContainer" unique_id=581185650]
+[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde2/Panel2/VBoxContainer" unique_id=581185650]
 layout_mode = 2
 size_flags_vertical = 3
 text = "avrg"
 label_settings = SubResource("LabelSettings_6fhyq")
 vertical_alignment = 1
 
-[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=733159739]
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=733159739]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jq8tk")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1618602928]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1618602928]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=303949188]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=303949188]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=11061895]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=11061895]
 layout_mode = 2
 size_flags_vertical = 3
 value = 50.0
 fill_mode = 3
 show_percentage = false
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=329327765]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=329327765]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=14416605]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=14416605]
 layout_mode = 2
 size_flags_vertical = 3
 value = 50.0
 fill_mode = 3
 show_percentage = false
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1745896910]
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1745896910]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1248307461]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1248307461]
 layout_mode = 2
 size_flags_vertical = 3
 value = 50.0
 fill_mode = 3
 show_percentage = false
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1995353917]
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1995353917]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer4" unique_id=2026209330]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer4" unique_id=2026209330]
 layout_mode = 2
 size_flags_vertical = 3
 value = 50.0
 fill_mode = 3
 show_percentage = false
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1444183656]
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1444183656]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer5" unique_id=1270696344]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer5" unique_id=1270696344]
 layout_mode = 2
 size_flags_vertical = 3
 value = 50.0
 fill_mode = 3
 show_percentage = false
 
-[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1398263732]
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1398263732]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer6" unique_id=1019903629]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer6" unique_id=1019903629]
 layout_mode = 2
 size_flags_vertical = 3
 value = 50.0
 fill_mode = 3
 show_percentage = false
 
-[node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1459052670]
+[node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer" unique_id=1459052670]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer7" unique_id=1889359077]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/HBoxContainer/VBoxContainer7" unique_id=1889359077]
 layout_mode = 2
 size_flags_vertical = 3
 value = 50.0
 fill_mode = 3
 show_percentage = false
 
-[node name="AutoAdde3" type="HBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1955788875]
+[node name="AutoAdde3" type="HBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer" unique_id=1955788875]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3" unique_id=1910149828]
+[node name="Panel" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3" unique_id=779254143]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel" unique_id=990554131]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel" unique_id=990554131]
+layout_mode = 2
 
-[node name="Value" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel/VBoxContainer" unique_id=272168533]
+[node name="Value" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel/VBoxContainer" unique_id=272168533]
 layout_mode = 2
 size_flags_vertical = 3
 text = "1.500"
 label_settings = SubResource("LabelSettings_p3fls")
 
-[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel/VBoxContainer" unique_id=1784886994]
+[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel/VBoxContainer" unique_id=1784886994]
 layout_mode = 2
 size_flags_vertical = 3
 text = "avrg"
 label_settings = SubResource("LabelSettings_6fhyq")
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3" unique_id=525375238]
+[node name="Panel2" type="PanelContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3" unique_id=1617390484]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel2" unique_id=1550756679]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel2" unique_id=1550756679]
+layout_mode = 2
 
-[node name="Value" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel2/VBoxContainer" unique_id=2024882483]
+[node name="Value" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel2/VBoxContainer" unique_id=2024882483]
 layout_mode = 2
 size_flags_vertical = 3
 text = "1.500"
 label_settings = SubResource("LabelSettings_p3fls")
 
-[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel2/VBoxContainer" unique_id=604377333]
+[node name="ValueDesc" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/Panel2/VBoxContainer" unique_id=604377333]
 layout_mode = 2
 size_flags_vertical = 3
 text = "avrg"
 label_settings = SubResource("LabelSettings_6fhyq")
 vertical_alignment = 1
 
-[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1288227360]
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1288227360]
 custom_minimum_size = Vector2(0, 32.525)
 layout_mode = 2
 size_flags_stretch_ratio = 0.2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_3xd07")
 
-[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/Home/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1674992625]
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1674992625]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_6fhyq")
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/Home/HBoxContainer" unique_id=649423030]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="Suggest" type="Control" parent="VBoxContainer/Display" unique_id=1215382027]
 visible = false
@@ -711,7 +691,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Suggest" unique_id=1293012581]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Suggest" unique_id=1900125732]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -719,14 +699,177 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Suggest/VBoxContainer" unique_id=2123346576]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Display/Suggest/HBoxContainer" unique_id=1306422764]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer" unique_id=1293012581]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 73.4
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer" unique_id=2123346576]
 layout_mode = 2
 text = "Suggest"
 label_settings = ExtResource("3_y86a1")
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Suggest/VBoxContainer" unique_id=1516700560]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer" unique_id=1516700560]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_y86a1")
+
+[node name="LogMeal" type="PanelContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer" unique_id=18482335]
+custom_minimum_size = Vector2(0, 113.295)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/LogMeal" unique_id=1942098280]
+layout_mode = 2
+
+[node name="TextureMakananInput" type="TextureRect" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/LogMeal/HBoxContainer" unique_id=955716526]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_ynj3n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/LogMeal/HBoxContainer" unique_id=1024694955]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.55
+
+[node name="NamaMakanan" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/LogMeal/HBoxContainer/VBoxContainer" unique_id=859212960]
+layout_mode = 2
+text = "Nama Makanan"
+label_settings = SubResource("LabelSettings_p3fls")
+
+[node name="Deskripsi" type="RichTextLabel" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/LogMeal/HBoxContainer/VBoxContainer" unique_id=1995066100]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Makanan Ini mengandung berbagai asupan"
+
+[node name="SpecMakanan" type="HBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer" unique_id=39990852]
+custom_minimum_size = Vector2(0, 66.3)
+layout_mode = 2
+
+[node name="Pro" type="PanelContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan" unique_id=923751020]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ValueCount" type="VBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Pro" unique_id=2013042902]
+layout_mode = 2
+alignment = 1
+
+[node name="ProValue" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Pro/ValueCount" unique_id=2048922076]
+layout_mode = 2
+text = "30g"
+label_settings = SubResource("LabelSettings_6fhyq")
+horizontal_alignment = 1
+
+[node name="ProValue2" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Pro/ValueCount" unique_id=1648176171]
+layout_mode = 2
+text = "Protein Gap"
+label_settings = SubResource("LabelSettings_ryh23")
+horizontal_alignment = 1
+
+[node name="Carb" type="PanelContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan" unique_id=1452233697]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ValueCount" type="VBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Carb" unique_id=1338283762]
+layout_mode = 2
+alignment = 1
+
+[node name="ProValue" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Carb/ValueCount" unique_id=1146800987]
+layout_mode = 2
+text = "30g"
+label_settings = SubResource("LabelSettings_6fhyq")
+horizontal_alignment = 1
+
+[node name="ProValue2" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Carb/ValueCount" unique_id=1423100002]
+layout_mode = 2
+text = "Calorie left"
+label_settings = SubResource("LabelSettings_ryh23")
+horizontal_alignment = 1
+
+[node name="Fat" type="PanelContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan" unique_id=1443329304]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ValueCount" type="VBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Fat" unique_id=890621699]
+layout_mode = 2
+alignment = 1
+
+[node name="ProValue" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Fat/ValueCount" unique_id=594802968]
+layout_mode = 2
+text = "30g"
+label_settings = SubResource("LabelSettings_6fhyq")
+horizontal_alignment = 1
+
+[node name="ProValue2" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Fat/ValueCount" unique_id=224905018]
+layout_mode = 2
+text = "Carbo gap"
+label_settings = SubResource("LabelSettings_ryh23")
+horizontal_alignment = 1
+
+[node name="Cal" type="PanelContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan" unique_id=1639793589]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ValueCount" type="VBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Cal" unique_id=2036383607]
+layout_mode = 2
+alignment = 1
+
+[node name="ProValue" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Cal/ValueCount" unique_id=1575858504]
+layout_mode = 2
+text = "30g"
+label_settings = SubResource("LabelSettings_6fhyq")
+horizontal_alignment = 1
+
+[node name="ProValue2" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/Cal/ValueCount" unique_id=1581076532]
+layout_mode = 2
+text = "Fat Gap
+"
+label_settings = SubResource("LabelSettings_ryh23")
+horizontal_alignment = 1
+
+[node name="FoodSuggest" type="Label" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer" unique_id=551299781]
+layout_mode = 2
+text = "Food Suggest"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer" unique_id=1709617221]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=135772422]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FoodSuggestPanel" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=960954013 instance=ExtResource("8_pfg36")]
+layout_mode = 2
+
+[node name="FoodSuggestPanel2" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1402930028 instance=ExtResource("8_pfg36")]
+layout_mode = 2
+
+[node name="FoodSuggestPanel3" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2029724906 instance=ExtResource("8_pfg36")]
+layout_mode = 2
+
+[node name="FoodSuggestPanel4" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1743585006 instance=ExtResource("8_pfg36")]
+layout_mode = 2
+
+[node name="FoodSuggestPanel5" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=858193480 instance=ExtResource("8_pfg36")]
+layout_mode = 2
+
+[node name="FoodSuggestPanel6" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=554789250 instance=ExtResource("8_pfg36")]
+layout_mode = 2
+
+[node name="FoodSuggestPanel7" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1625286470 instance=ExtResource("8_pfg36")]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/Suggest/HBoxContainer" unique_id=160915462]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="Scan" type="Control" parent="VBoxContainer/Display" unique_id=1014737296]
 visible = false
@@ -789,7 +932,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile" unique_id=1254434642]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Profile" unique_id=359052257]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -797,31 +940,66 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/VBoxContainer" unique_id=587133021]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer" unique_id=2043487549]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer" unique_id=1254434642]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 194.65
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=587133021]
 layout_mode = 2
 text = "Profile"
 label_settings = ExtResource("3_y86a1")
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Profile/VBoxContainer" unique_id=1408226351]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=1408226351]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_y86a1")
 
-[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=260971683]
+[node name="PersonalInformation" type="PanelContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=114600909]
+custom_minimum_size = Vector2(0, 99.67)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/PersonalInformation" unique_id=925261134]
+layout_mode = 2
+
+[node name="PhotoProfile" type="TextureRect" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/PersonalInformation/HBoxContainer" unique_id=1332438402]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_ryh23")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameUser" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/PersonalInformation/HBoxContainer" unique_id=874666374]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.95
+text = "Name"
+label_settings = ExtResource("4_n8jl1")
+
+[node name="LogOut" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=984772458]
+layout_mode = 2
+text = "Log Out"
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer" unique_id=1095801302]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
+
+[node name="Panel" type="PanelContainer" parent="VBoxContainer" unique_id=1903928420]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.4
-theme_override_styles/panel = SubResource("StyleBoxFlat_jq8tk")
+size_flags_stretch_ratio = 1.05
 
 [node name="Menu" type="HBoxContainer" parent="VBoxContainer/Panel" unique_id=241325178]
 unique_name_in_owner = true
 modulate = Color(0.37413925, 0.37413928, 0.37413922, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = -7
 
 [node name="Home" type="Button" parent="VBoxContainer/Panel/Menu" unique_id=1078624644]
 layout_mode = 2
@@ -832,6 +1010,7 @@ icon = ExtResource("2_jajw2")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="Suggested" type="Button" parent="VBoxContainer/Panel/Menu" unique_id=457081749]
 layout_mode = 2
@@ -841,6 +1020,7 @@ icon = ExtResource("3_wr31l")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="Scan" type="Button" parent="VBoxContainer/Panel/Menu" unique_id=737189139]
 layout_mode = 2
@@ -851,6 +1031,7 @@ icon = ExtResource("4_y86a1")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="AiChat" type="Button" parent="VBoxContainer/Panel/Menu" unique_id=1311372011]
 layout_mode = 2
@@ -860,6 +1041,7 @@ icon = ExtResource("5_n8jl1")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="Profile" type="Button" parent="VBoxContainer/Panel/Menu" unique_id=1539837541]
 layout_mode = 2
@@ -870,6 +1052,7 @@ icon = ExtResource("6_p3fls")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
 
 [connection signal="pressed" from="VBoxContainer/Panel/Menu/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Menu/Suggested" to="." method="_on_suggested_pressed"]

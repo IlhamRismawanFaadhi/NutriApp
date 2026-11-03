@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://c4qmwpkrkhpb4"]
+
+[ext_resource type="Texture2D" uid="uid://cw2plgnuyavts" path="res://Asset/Image/NasiGoreng.jpg" id="1_km2r4"]
+[ext_resource type="FontFile" uid="uid://drhtif4f5mw2" path="res://Asset/Font/Ubuntu/Ubuntu-Regular.ttf" id="2_xu600"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1esiv"]
+font_size = 13
+font_color = Color(0.33476955, 0.52072465, 0.58068067, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_bhunq"]
+base_font = ExtResource("2_xu600")
+variation_embolden = 1.45
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fhyq"]
+font = SubResource("FontVariation_bhunq")
+font_color = Color(0.44705883, 0.42745098, 0.47843137, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_6f8o3"]
+base_font = ExtResource("2_xu600")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jfoer"]
+font = SubResource("FontVariation_6f8o3")
+font_size = 12
+font_color = Color(0.36395833, 0.3469241, 0.39444435, 1)
+
+[node name="FoodSuggestPanel" type="PanelContainer" unique_id=960954013]
+custom_minimum_size = Vector2(0, 84.945)
+
+[node name="Container" type="HBoxContainer" parent="." unique_id=146230525]
+layout_mode = 2
+
+[node name="FoodTexture" type="TextureRect" parent="Container" unique_id=2003323562]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_km2r4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Information" type="VBoxContainer" parent="Container" unique_id=1238139304]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TypeFood" type="Label" parent="Container/Information" unique_id=1622155614]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dinner"
+label_settings = SubResource("LabelSettings_1esiv")
+
+[node name="NameFood" type="Label" parent="Container/Information" unique_id=373264688]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Nasi Goreng"
+label_settings = SubResource("LabelSettings_6fhyq")
+
+[node name="Composition" type="Label" parent="Container/Information" unique_id=1593766797]
+layout_mode = 2
+size_flags_vertical = 1
+text = "30g protein - 58g carb - 12g fat"
+label_settings = SubResource("LabelSettings_jfoer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=1590727327]
+layout_mode = 2
+alignment = 1
+
+[node name="Calories" type="Button" parent="Container/VBoxContainer" unique_id=689290395]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Kcal 400"
