@@ -13,6 +13,7 @@
 [ext_resource type="FontVariation" uid="uid://cl1ghml6fsl2n" path="res://Asset/Font/tress_font/UiFont.tres" id="6_ynj3n"]
 [ext_resource type="Texture2D" uid="uid://cw2plgnuyavts" path="res://Asset/Image/NasiGoreng.jpg" id="7_ynj3n"]
 [ext_resource type="PackedScene" uid="uid://c4qmwpkrkhpb4" path="res://Component/FoodSuggestPanel/food_suggest_panel.tscn" id="8_pfg36"]
+[ext_resource type="Texture2D" uid="uid://08r5rb57byle" path="res://Asset/Image/NasiPadang.jpg" id="9_l4ygr"]
 [ext_resource type="Texture2D" uid="uid://dvledmi7sfa0n" path="res://Asset/Icon/PNG/Black/2x/singleplayer.png" id="9_ryh23"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhunq"]
@@ -89,6 +90,33 @@ font = SubResource("FontVariation_riqys")
 font_size = 12
 font_color = Color(0.36395833, 0.3469241, 0.39444435, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhunq"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hlvs"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(3.946722e-06, 0.90472984, 0.47052985, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
 [node name="MainMenu" type="Control" unique_id=1747641759]
 layout_mode = 3
 anchors_preset = 15
@@ -122,6 +150,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 9.85
 
 [node name="Home" type="Control" parent="VBoxContainer/Display" unique_id=484896149]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -872,7 +901,6 @@ size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="Scan" type="Control" parent="VBoxContainer/Display" unique_id=1014737296]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -880,7 +908,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Scan" unique_id=1312663282]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Scan" unique_id=186044338]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -888,14 +916,72 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Scan/VBoxContainer" unique_id=1296806517]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Display/Scan/HBoxContainer" unique_id=512056187]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Scan/HBoxContainer" unique_id=1312663282]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 302.85
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer" unique_id=1296806517]
 layout_mode = 2
 text = "Scan"
 label_settings = ExtResource("3_y86a1")
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Scan/VBoxContainer" unique_id=1847364844]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer" unique_id=1847364844]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_y86a1")
+
+[node name="Photo" type="TextureRect" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer" unique_id=1828000433]
+custom_minimum_size = Vector2(0, 347.915)
+layout_mode = 2
+texture = ExtResource("9_l4ygr")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/Photo" unique_id=1193972549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.78, 0.78)
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhunq")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/Photo/Panel" unique_id=1601573587]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 0.325)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0hlvs")
+
+[node name="NameUser" type="Label" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/Photo/Panel/PanelContainer" unique_id=1338446049]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.95
+text = " Take Photo "
+label_settings = ExtResource("4_n8jl1")
+
+[node name="FoodorDrinkDetail" type="PanelContainer" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer" unique_id=930632892]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/Scan/HBoxContainer" unique_id=107504691]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="AiChat" type="Control" parent="VBoxContainer/Display" unique_id=1664417278]
 visible = false
