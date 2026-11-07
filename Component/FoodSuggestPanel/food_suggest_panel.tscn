@@ -1,19 +1,31 @@
 [gd_scene format=3 uid="uid://c4qmwpkrkhpb4"]
 
 [ext_resource type="Texture2D" uid="uid://cw2plgnuyavts" path="res://Asset/Image/NasiGoreng.jpg" id="1_km2r4"]
+[ext_resource type="Theme" uid="uid://15muj8tp0kn2" path="res://addons/gohud/themes/gohud_material_light.tres" id="1_xu600"]
 [ext_resource type="FontFile" uid="uid://drhtif4f5mw2" path="res://Asset/Font/Ubuntu/Ubuntu-Regular.ttf" id="2_xu600"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu600"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.92549, 0.901961, 0.941176, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_1esiv"]
 font_size = 13
-font_color = Color(0.33476955, 0.52072465, 0.58068067, 1)
+font_color = Color(0.42806667, 0.8322572, 0, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_bhunq"]
+[sub_resource type="FontVariation" id="FontVariation_km2r4"]
 base_font = ExtResource("2_xu600")
-variation_embolden = 1.45
+variation_embolden = 0.82
 
 [sub_resource type="LabelSettings" id="LabelSettings_6fhyq"]
-font = SubResource("FontVariation_bhunq")
-font_color = Color(0.44705883, 0.42745098, 0.47843137, 1)
+font = SubResource("FontVariation_km2r4")
+font_color = Color(0.3172787, 0.31727865, 0.31727865, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_6f8o3"]
 base_font = ExtResource("2_xu600")
@@ -21,17 +33,25 @@ base_font = ExtResource("2_xu600")
 [sub_resource type="LabelSettings" id="LabelSettings_jfoer"]
 font = SubResource("FontVariation_6f8o3")
 font_size = 12
-font_color = Color(0.36395833, 0.3469241, 0.39444435, 1)
+font_color = Color(0.10690612, 0.10970887, 0.10116223, 1)
 
 [node name="FoodSuggestPanel" type="PanelContainer" unique_id=960954013]
 custom_minimum_size = Vector2(0, 84.945)
+theme = ExtResource("1_xu600")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xu600")
 
 [node name="Container" type="HBoxContainer" parent="." unique_id=146230525]
 layout_mode = 2
 
+[node name="VSeparator2" type="VSeparator" parent="Container" unique_id=33346252]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.3
+
 [node name="FoodTexture" type="TextureRect" parent="Container" unique_id=2003323562]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 18.8
 texture = ExtResource("1_km2r4")
 expand_mode = 1
 stretch_mode = 5
@@ -66,3 +86,9 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Kcal 400"
+
+[node name="VSeparator" type="VSeparator" parent="Container" unique_id=1312123707]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.3

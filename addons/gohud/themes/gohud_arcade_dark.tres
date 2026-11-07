@@ -1,880 +1,138 @@
-[gd_resource type="Theme" load_steps=86 format=3]
+[gd_resource type="Theme" format=3 uid="uid://caovvwi40n1n8"]
 
-[ext_resource type="Script" path="res://addons/gohud/widgets/go_stylebox_arcade.gd" id="arcade"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/toggle_on.svg" id="toggle_on"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/toggle_on_mirrored.svg" id="toggle_on_mirrored"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/toggle_on_disabled.svg" id="toggle_on_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/toggle_on_disabled_mirrored.svg" id="toggle_on_disabled_mirrored"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/check_on.svg" id="check_on"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/radio_on.svg" id="radio_on"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/check_on_disabled.svg" id="check_on_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/radio_on_disabled.svg" id="radio_on_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/toggle_off.svg" id="toggle_off"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/toggle_off_mirrored.svg" id="toggle_off_mirrored"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/toggle_off_disabled.svg" id="toggle_off_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/toggle_off_disabled_mirrored.svg" id="toggle_off_disabled_mirrored"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/check_off.svg" id="check_off"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/radio_off.svg" id="radio_off"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/check_off_disabled.svg" id="check_off_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/radio_off_disabled.svg" id="radio_off_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/grabber.svg" id="grabber"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/grabber_highlight.svg" id="grabber_highlight"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/grabber_disabled.svg" id="grabber_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/arrow_down.svg" id="arrow_down"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/arrow_right.svg" id="arrow_right"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/arcade_dark/arrow_left.svg" id="arrow_left"]
-
-[sub_resource type="StyleBox" id="btn_normal"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.306988, 0.525035, 0.975914, 1)
-bottom_color = Color(0.145571, 0.395529, 0.912389, 1)
-shade_color = Color(0.108404, 0.294543, 0.679439, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-
-[sub_resource type="StyleBox" id="btn_hover"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.391882, 0.583219, 0.978865, 1)
-bottom_color = Color(0.244389, 0.463726, 0.917272, 1)
-shade_color = Color(0.177969, 0.3434, 0.685476, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-
-[sub_resource type="StyleBox" id="btn_pressed"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 11
-content_margin_right = 16
-content_margin_bottom = 9
-bg_color = Color(0.276916, 0.466508, 0.858547, 1)
-bottom_color = Color(0.126574, 0.343912, 0.793323, 1)
-shade_color = Color(0.0980786, 0.266487, 0.614722, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-pressed = true
-sink = 3
-radius = 16
+[ext_resource type="Script" uid="uid://b0utxx1h2oyeg" path="res://addons/gohud/widgets/go_stylebox_arcade.gd" id="arcade"]
+[ext_resource type="Texture2D" uid="uid://bdpwsiyx0pk6h" path="res://addons/gohud/assets/arcade_dark/arrow_down.svg" id="arrow_down"]
+[ext_resource type="Texture2D" uid="uid://b4vkste8x0qhm" path="res://addons/gohud/assets/arcade_dark/arrow_left.svg" id="arrow_left"]
+[ext_resource type="Texture2D" uid="uid://bllk45ij3j7lh" path="res://addons/gohud/assets/arcade_dark/arrow_right.svg" id="arrow_right"]
+[ext_resource type="Texture2D" uid="uid://bcocmoxgap11" path="res://addons/gohud/assets/arcade_dark/check_off.svg" id="check_off"]
+[ext_resource type="Texture2D" uid="uid://cm0ufg17hwa5f" path="res://addons/gohud/assets/arcade_dark/check_off_disabled.svg" id="check_off_disabled"]
+[ext_resource type="Texture2D" uid="uid://q3dqhsvd1l14" path="res://addons/gohud/assets/arcade_dark/check_on.svg" id="check_on"]
+[ext_resource type="Texture2D" uid="uid://bwlku7amhhlce" path="res://addons/gohud/assets/arcade_dark/check_on_disabled.svg" id="check_on_disabled"]
+[ext_resource type="Texture2D" uid="uid://c7tighfhpnuhw" path="res://addons/gohud/assets/arcade_dark/grabber.svg" id="grabber"]
+[ext_resource type="Texture2D" uid="uid://hi1jw5tpeoex" path="res://addons/gohud/assets/arcade_dark/grabber_disabled.svg" id="grabber_disabled"]
+[ext_resource type="Texture2D" uid="uid://f8ouooaymj5r" path="res://addons/gohud/assets/arcade_dark/grabber_highlight.svg" id="grabber_highlight"]
+[ext_resource type="Texture2D" uid="uid://bwsdksblcdta3" path="res://addons/gohud/assets/arcade_dark/radio_off.svg" id="radio_off"]
+[ext_resource type="Texture2D" uid="uid://bp4elv3qwdw6c" path="res://addons/gohud/assets/arcade_dark/radio_off_disabled.svg" id="radio_off_disabled"]
+[ext_resource type="Texture2D" uid="uid://bo68gaufstld5" path="res://addons/gohud/assets/arcade_dark/radio_on.svg" id="radio_on"]
+[ext_resource type="Texture2D" uid="uid://17fgoxpchxdw" path="res://addons/gohud/assets/arcade_dark/radio_on_disabled.svg" id="radio_on_disabled"]
+[ext_resource type="Texture2D" uid="uid://yejupq2hkvwn" path="res://addons/gohud/assets/arcade_dark/toggle_off.svg" id="toggle_off"]
+[ext_resource type="Texture2D" uid="uid://cqy6p5506mrb2" path="res://addons/gohud/assets/arcade_dark/toggle_off_disabled.svg" id="toggle_off_disabled"]
+[ext_resource type="Texture2D" uid="uid://bgq3jpc607cb7" path="res://addons/gohud/assets/arcade_dark/toggle_off_disabled_mirrored.svg" id="toggle_off_disabled_mirrored"]
+[ext_resource type="Texture2D" uid="uid://chnn4l4lhb42d" path="res://addons/gohud/assets/arcade_dark/toggle_off_mirrored.svg" id="toggle_off_mirrored"]
+[ext_resource type="Texture2D" uid="uid://me6fydma76l5" path="res://addons/gohud/assets/arcade_dark/toggle_on.svg" id="toggle_on"]
+[ext_resource type="Texture2D" uid="uid://c3s7s2pbcfun6" path="res://addons/gohud/assets/arcade_dark/toggle_on_disabled.svg" id="toggle_on_disabled"]
+[ext_resource type="Texture2D" uid="uid://do4uxw2ip20ni" path="res://addons/gohud/assets/arcade_dark/toggle_on_disabled_mirrored.svg" id="toggle_on_disabled_mirrored"]
+[ext_resource type="Texture2D" uid="uid://b2paa24gar4wb" path="res://addons/gohud/assets/arcade_dark/toggle_on_mirrored.svg" id="toggle_on_mirrored"]
 
 [sub_resource type="StyleBox" id="btn_disabled"]
-script = ExtResource("arcade")
-content_margin_left = 16
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
 content_margin_top = 8.5
-content_margin_right = 16
+content_margin_right = 16.0
 content_margin_bottom = 11.5
-bg_color = Color(0.222272, 0.261614, 0.444661, 1)
+script = ExtResource("arcade")
 bottom_color = Color(0.189866, 0.230848, 0.421522, 1)
+bg_color = Color(0.222272, 0.261614, 0.444661, 1)
 shade_color = Color(0.157893, 0.192796, 0.355218, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 0.45)
-border_width = 3
-band = 0
-shine = 0
-lip = 3
-radius = 16
+lip = 3.0
+band = 0.0
+shine = 0.0
 
 [sub_resource type="StyleBox" id="btn_focus"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
 script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
 bg_color = Color(1, 1, 1, 0)
-draw_center = false
 border_color = Color(1, 1, 1, 1)
-border_width = 3
-lip = 0
-shine = 0
-radius = 13
-expand_margin_left = -3
-expand_margin_top = -3
-expand_margin_right = -3
-expand_margin_bottom = -3
-
-[sub_resource type="StyleBox" id="btn_focus_on_fill"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.0300001, 0.0405882, 0.09, 0)
+lip = 0.0
+radius = 13.0
+shine = 0.0
 draw_center = false
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-lip = 0
-shine = 0
-radius = 13
-expand_margin_left = -3
-expand_margin_top = -3
-expand_margin_right = -3
-expand_margin_bottom = -3
+expand_margin_left = -3.0
+expand_margin_top = -3.0
+expand_margin_right = -3.0
+expand_margin_bottom = -3.0
 
-[sub_resource type="StyleBox" id="btn_primary"]
+[sub_resource type="StyleBox" id="btn_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
 script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.386074, 0.871212, 0.340945, 1)
-bottom_color = Color(0.236231, 0.792365, 0.184498, 1)
-shade_color = Color(0.175917, 0.590059, 0.137392, 1)
+bottom_color = Color(0.244389, 0.463726, 0.917272, 1)
+bg_color = Color(0.391882, 0.583219, 0.978865, 1)
+shade_color = Color(0.177969, 0.3434, 0.685476, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
+band = 0.0
 shine = 0.85
-lip = 4
-radius = 16
 
-[sub_resource type="StyleBox" id="btn_primary_hover"]
+[sub_resource type="StyleBox" id="btn_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 11.0
+content_margin_right = 16.0
+content_margin_bottom = 9.0
 script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.447467, 0.88409, 0.40685, 1)
-bottom_color = Color(0.306608, 0.807128, 0.260048, 1)
-shade_color = Color(0.228325, 0.601053, 0.193653, 1)
+bottom_color = Color(0.126574, 0.343912, 0.793323, 1)
+bg_color = Color(0.276916, 0.466508, 0.858547, 1)
+shade_color = Color(0.0980786, 0.266487, 0.614722, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
+band = 0.0
 shine = 0.85
-lip = 4
-radius = 16
-
-[sub_resource type="StyleBox" id="btn_primary_pressed"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 11
-content_margin_right = 16
-content_margin_bottom = 9
-bg_color = Color(0.37371, 0.829739, 0.331288, 1)
-bottom_color = Color(0.222058, 0.744823, 0.173428, 1)
-shade_color = Color(0.165362, 0.554655, 0.129148, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
 pressed = true
-sink = 3
-radius = 16
+sink = 3.0
 
-[sub_resource type="StyleBox" id="btn_primary_glow"]
+[sub_resource type="StyleBox" id="btn_normal"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
 script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.386074, 0.871212, 0.340945, 1)
-bottom_color = Color(0.236231, 0.792365, 0.184498, 1)
-shade_color = Color(0.175917, 0.590059, 0.137392, 1)
+bottom_color = Color(0.145571, 0.395529, 0.912389, 1)
+bg_color = Color(0.306988, 0.525035, 0.975914, 1)
+shade_color = Color(0.108404, 0.294543, 0.679439, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
+band = 0.0
 shine = 0.85
-lip = 4
-radius = 16
-shadow_color = Color(1, 0.698039, 0.117647, 1)
-shadow_size = 4
-shadow_offset = Vector2(0, 0)
-
-[sub_resource type="StyleBox" id="btn_primary_glow_hover"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.447467, 0.88409, 0.40685, 1)
-bottom_color = Color(0.306608, 0.807128, 0.260048, 1)
-shade_color = Color(0.228325, 0.601053, 0.193653, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-shadow_color = Color(1, 0.698039, 0.117647, 1)
-shadow_size = 4
-shadow_offset = Vector2(0, 0)
-
-[sub_resource type="StyleBox" id="btn_primary_glow_pressed"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 11
-content_margin_right = 16
-content_margin_bottom = 9
-bg_color = Color(0.37371, 0.829739, 0.331288, 1)
-bottom_color = Color(0.222058, 0.744823, 0.173428, 1)
-shade_color = Color(0.165362, 0.554655, 0.129148, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-pressed = true
-sink = 3
-radius = 16
-shadow_color = Color(1, 0.698039, 0.117647, 1)
-shadow_size = 4
-shadow_offset = Vector2(0, 0)
-
-[sub_resource type="StyleBox" id="btn_danger"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.968009, 0.526871, 0.549558, 1)
-bottom_color = Color(0.903327, 0.397633, 0.42364, 1)
-shade_color = Color(0.67269, 0.29611, 0.315477, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-
-[sub_resource type="StyleBox" id="btn_danger_hover"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.971208, 0.574184, 0.594603, 1)
-bottom_color = Color(0.906994, 0.45187, 0.475276, 1)
-shade_color = Color(0.675421, 0.336499, 0.353929, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-
-[sub_resource type="StyleBox" id="btn_danger_solid"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.957659, 0.3738, 0.403827, 1)
-bottom_color = Color(0.897462, 0.228161, 0.262583, 1)
-shade_color = Color(0.676847, 0.150742, 0.177798, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-
-[sub_resource type="StyleBox" id="btn_danger_solid_hover"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.957659, 0.3738, 0.403827, 1)
-bottom_color = Color(0.891462, 0.222161, 0.256583, 1)
-shade_color = Color(0.663855, 0.165439, 0.191072, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-
-[sub_resource type="StyleBox" id="btn_danger_solid_pressed"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 11
-content_margin_right = 16
-content_margin_bottom = 9
-bg_color = Color(0.793255, 0.259673, 0.287114, 1)
-bottom_color = Color(0.728792, 0.117125, 0.148582, 1)
-shade_color = Color(0.581483, 0.093451, 0.11855, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-pressed = true
-sink = 3
-radius = 16
-
-[sub_resource type="StyleBox" id="btn_danger_solid_glow"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.957659, 0.3738, 0.403827, 1)
-bottom_color = Color(0.897462, 0.228161, 0.262583, 1)
-shade_color = Color(0.676847, 0.150742, 0.177798, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-shadow_color = Color(1, 0.698039, 0.117647, 1)
-shadow_size = 4
-shadow_offset = Vector2(0, 0)
-
-[sub_resource type="StyleBox" id="btn_danger_solid_glow_hover"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 8
-content_margin_right = 16
-content_margin_bottom = 12
-bg_color = Color(0.957659, 0.3738, 0.403827, 1)
-bottom_color = Color(0.891462, 0.222161, 0.256583, 1)
-shade_color = Color(0.663855, 0.165439, 0.191072, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-radius = 16
-shadow_color = Color(1, 0.698039, 0.117647, 1)
-shadow_size = 4
-shadow_offset = Vector2(0, 0)
-
-[sub_resource type="StyleBox" id="btn_danger_solid_glow_pressed"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 11
-content_margin_right = 16
-content_margin_bottom = 9
-bg_color = Color(0.793255, 0.259673, 0.287114, 1)
-bottom_color = Color(0.728792, 0.117125, 0.148582, 1)
-shade_color = Color(0.581483, 0.093451, 0.11855, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.85
-lip = 4
-pressed = true
-sink = 3
-radius = 16
-shadow_color = Color(1, 0.698039, 0.117647, 1)
-shadow_size = 4
-shadow_offset = Vector2(0, 0)
-
-[sub_resource type="StyleBox" id="compact_normal"]
-script = ExtResource("arcade")
-content_margin_left = 10
-content_margin_top = 3.5
-content_margin_right = 10
-content_margin_bottom = 6.5
-bg_color = Color(0.46285, 0.499371, 0.750199, 1)
-bottom_color = Color(0.329401, 0.371267, 0.658801, 1)
-shade_color = Color(0.248443, 0.28002, 0.496887, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.85
-lip = 3
-radius = 10
-
-[sub_resource type="StyleBox" id="compact_hover"]
-script = ExtResource("arcade")
-content_margin_left = 10
-content_margin_top = 3.5
-content_margin_right = 10
-content_margin_bottom = 6.5
-bg_color = Color(0.527246, 0.560958, 0.792492, 1)
-bottom_color = Color(0.398062, 0.436708, 0.702124, 1)
-shade_color = Color(0.296429, 0.325208, 0.522859, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.85
-lip = 3
-radius = 10
-
-[sub_resource type="StyleBoxFlat" id="icon_hover"]
-bg_color = Color(0.94902, 0.960784, 1, 0.1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 8
-
-[sub_resource type="StyleBox" id="list_normal"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.248, 0.30698, 0.568705, 1)
-bottom_color = Color(0.160784, 0.213726, 0.45098, 1)
-shade_color = Color(0.118934, 0.158322, 0.335466, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.6
-lip = 3
-radius = 6
-
-[sub_resource type="StyleBox" id="list_hover"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.3012, 0.356008, 0.599217, 1)
-bottom_color = Color(0.232549, 0.283725, 0.512451, 1)
-shade_color = Color(0.118934, 0.158322, 0.335466, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.6
-lip = 3
-radius = 6
-
-[sub_resource type="StyleBox" id="focus_soft"]
-script = ExtResource("arcade")
-content_margin_left = 1
-content_margin_top = 1
-content_margin_right = 1
-content_margin_bottom = 1
-bg_color = Color(1, 1, 1, 0)
-draw_center = false
-border_color = Color(1, 1, 1, 1)
-border_width = 2
-lip = 0
-shine = 0
-radius = 7
-expand_margin_left = -3
-expand_margin_top = -3
-expand_margin_right = -3
-expand_margin_bottom = -3
-
-[sub_resource type="StyleBox" id="panel"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.121569, 0.164706, 0.360784, 1)
-bottom_color = Color(0.156863, 0.208824, 0.44196, 1)
-frame = 6
-frame_color = Color(0.222474, 0.467113, 0.972977, 1)
-frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
-shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
-inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
-line_width = 2
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.7
-lip = 4
-radius = 24
-shadow_color = Color(0, 0, 0, 0.2475)
-shadow_size = 18
-shadow_offset = Vector2(0, 6)
-
-[sub_resource type="StyleBox" id="panel_solid"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.121569, 0.164706, 0.360784, 1)
-bottom_color = Color(0.156863, 0.208824, 0.44196, 1)
-frame = 5
-frame_color = Color(0.222474, 0.467113, 0.972977, 1)
-frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
-shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
-inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
-line_width = 2
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.7
-lip = 4
-radius = 16
-
-[sub_resource type="StyleBox" id="card"]
-script = ExtResource("arcade")
-content_margin_left = 12
-content_margin_top = 12
-content_margin_right = 12
-content_margin_bottom = 15
-bg_color = Color(0.14902, 0.2, 0.423529, 1)
-bottom_color = Color(0.171961, 0.228235, 0.47647, 1)
-frame = 4
-frame_color = Color(0.222474, 0.467113, 0.972977, 1)
-frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
-shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
-inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
-line_width = 2
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.7
-lip = 3
-radius = 16
-shadow_color = Color(0, 0, 0, 0.135)
-shadow_size = 6
-shadow_offset = Vector2(0, 2)
-
-[sub_resource type="StyleBox" id="popup"]
-script = ExtResource("arcade")
-content_margin_left = 12
-content_margin_top = 12
-content_margin_right = 12
-content_margin_bottom = 14
-bg_color = Color(0.107843, 0.146079, 0.320588, 1)
-bottom_color = Color(0.149314, 0.198579, 0.419853, 1)
-frame = 3
-frame_color = Color(0.222474, 0.467113, 0.972977, 1)
-frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
-shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
-inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
-line_width = 2
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.7
-lip = 3
-radius = 16
-shadow_color = Color(0, 0, 0, 0.2475)
-shadow_size = 16
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBox" id="menu_hover"]
-script = ExtResource("arcade")
-content_margin_left = 12
-content_margin_top = 6
-content_margin_right = 12
-content_margin_bottom = 6
-bg_color = Color(0.134221, 0.262012, 0.592524, 1)
-bottom_color = Color(0.136698, 0.281064, 0.637897, 1)
-shade_color = Color(0.102955, 0.195585, 0.441767, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.5
-lip = 0
-radius = 10
-
-[sub_resource type="StyleBoxFlat" id="menu_separator"]
-content_margin_left = 0
-content_margin_top = 8
-content_margin_right = 0
-content_margin_bottom = 8
-bg_color = Color(0.486275, 0.54902, 0.839216, 0.7)
-
-[sub_resource type="StyleBox" id="hud"]
-script = ExtResource("arcade")
-content_margin_left = 12
-content_margin_top = 12
-content_margin_right = 12
-content_margin_bottom = 15
-bg_color = Color(0.121569, 0.164706, 0.360784, 0.92)
-bottom_color = Color(0.156863, 0.208824, 0.44196, 1)
-frame = 4
-frame_color = Color(0.222474, 0.467113, 0.972977, 1)
-frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
-shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
-inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
-line_width = 2
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.7
-lip = 3
-radius = 16
-
-[sub_resource type="StyleBox" id="notice"]
-script = ExtResource("arcade")
-content_margin_left = 12
-content_margin_top = 12
-content_margin_right = 12
-content_margin_bottom = 14
-bg_color = Color(0.113334, 0.153529, 0.336666, 1)
-bottom_color = Color(0.152334, 0.202676, 0.428696, 1)
-frame = 3
-frame_color = Color(0.222474, 0.467113, 0.972977, 1)
-frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
-shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
-inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
-line_width = 2
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
-shine = 0.7
-lip = 3
-radius = 16
-shadow_color = Color(0, 0, 0, 0.2025)
-shadow_size = 12
-shadow_offset = Vector2(0, 4)
 
 [sub_resource type="StyleBoxEmpty" id="empty"]
 
-[sub_resource type="StyleBox" id="edit_normal"]
+[sub_resource type="StyleBox" id="focus_soft"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
 script = ExtResource("arcade")
-content_margin_left = 12
-content_margin_top = 8
-content_margin_right = 12
-content_margin_bottom = 8
-bg_color = Color(0.121569, 0.164706, 0.360784, 1)
-bottom_color = Color(0.13804, 0.185882, 0.398431, 1)
-shade_color = Color(0.110581, 0.149812, 0.32829, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2.5
-band = 0
-shine = 0
-lip = 0
-sunken = true
-radius = 10
-
-[sub_resource type="StyleBox" id="edit_focus"]
-script = ExtResource("arcade")
-content_margin_left = 12
-content_margin_top = 8
-content_margin_right = 12
-content_margin_bottom = 8
-bg_color = Color(0.121569, 0.164706, 0.360784, 1)
-bottom_color = Color(0.13804, 0.185882, 0.398431, 1)
-shade_color = Color(0.131557, 0.241527, 0.543737, 1)
-border_color = Color(0.356863, 0.54902, 1, 1)
-border_width = 3
-band = 0
-shine = 0
-lip = 0
-sunken = true
-radius = 10
-
-[sub_resource type="StyleBoxFlat" id="scroll_track"]
-content_margin_left = 3
-content_margin_top = 3
-content_margin_right = 3
-content_margin_bottom = 3
-bg_color = Color(0.690712, 0.715887, 0.866935, 0.14)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 8
-
-[sub_resource type="StyleBox" id="scroll_grab"]
-script = ExtResource("arcade")
-content_margin_left = 3
-content_margin_top = 3
-content_margin_right = 3
-content_margin_bottom = 3
-bg_color = Color(0.46285, 0.499371, 0.750199, 1)
-bottom_color = Color(0.329401, 0.371267, 0.658801, 1)
-shade_color = Color(0.248443, 0.28002, 0.496887, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 1.5
-band = 0
-shine = 0
-lip = 0
-radius = 3
-
-[sub_resource type="StyleBox" id="scroll_grab_hover"]
-script = ExtResource("arcade")
-content_margin_left = 3
-content_margin_top = 3
-content_margin_right = 3
-content_margin_bottom = 3
-bg_color = Color(0.46285, 0.499371, 0.750199, 1)
-bottom_color = Color(0.329401, 0.371267, 0.658801, 1)
-shade_color = Color(0.248443, 0.28002, 0.496887, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 1.5
-band = 0
-shine = 0
-lip = 0
-radius = 3
-
-[sub_resource type="StyleBox" id="slider_track"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 3
-content_margin_right = 0
-content_margin_bottom = 3
-bg_color = Color(0.054902, 0.078431, 0.188235, 0.9)
-bottom_color = Color(0.0529099, 0.0754036, 0.180376, 1)
-shade_color = Color(0.0486765, 0.0689703, 0.163676, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0
-lip = 0
-sunken = true
-radius = 4
-
-[sub_resource type="StyleBox" id="slider_grab"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 3
-content_margin_right = 0
-content_margin_bottom = 3
-bg_color = Color(0.154863, 0.420775, 0.970627, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.75
-lip = 0
-radius = 4
-
-[sub_resource type="StyleBox" id="slider_grab_hover"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 3
-content_margin_right = 0
-content_margin_bottom = 3
-bg_color = Color(0.154863, 0.420775, 0.970627, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.75
-lip = 0
-radius = 4
-
-[sub_resource type="StyleBox" id="bar_bg"]
-script = ExtResource("arcade")
-content_margin_left = 1
-content_margin_top = 1
-content_margin_right = 1
-content_margin_bottom = 1
-bg_color = Color(0.054902, 0.078431, 0.188235, 0.85)
-bottom_color = Color(0.0529099, 0.0754036, 0.180376, 1)
-shade_color = Color(0.0486765, 0.0689703, 0.163676, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0
-lip = 0
-sunken = true
-radius = 10
-
-[sub_resource type="StyleBox" id="bar_fill"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.356863, 0.54902, 1, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.75
-lip = 0
-radius = 10
-
-[sub_resource type="StyleBoxFlat" id="separator"]
-content_margin_left = 0
-content_margin_top = 0.5
-content_margin_right = 0
-content_margin_bottom = 0.5
-bg_color = Color(0.486275, 0.54902, 0.839216, 0.8)
-
-[sub_resource type="StyleBox" id="tooltip"]
-script = ExtResource("arcade")
-content_margin_left = 10
-content_margin_top = 6
-content_margin_right = 10
-content_margin_bottom = 6
-bg_color = Color(1, 0.864118, 0.602941, 1)
-bottom_color = Color(1, 0.803725, 0.426471, 1)
-shade_color = Color(0.709, 0.500804, 0.109353, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0
-lip = 0
-radius = 10
-
-[sub_resource type="StyleBox" id="fold_title"]
-script = ExtResource("arcade")
-content_margin_left = 14
-content_margin_top = 11.5
-content_margin_right = 14
-content_margin_bottom = 14.5
-bg_color = Color(0.248, 0.30698, 0.568705, 1)
-bottom_color = Color(0.160784, 0.213726, 0.45098, 1)
-shade_color = Color(0.118934, 0.158322, 0.335466, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.6
-lip = 3
-radius = 16
-
-[sub_resource type="StyleBox" id="fold_title_hover"]
-script = ExtResource("arcade")
-content_margin_left = 14
-content_margin_top = 11.5
-content_margin_right = 14
-content_margin_bottom = 14.5
-bg_color = Color(0.3012, 0.356008, 0.599217, 1)
-bottom_color = Color(0.232549, 0.283725, 0.512451, 1)
-shade_color = Color(0.118934, 0.158322, 0.335466, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.6
-lip = 3
-radius = 16
-
-[sub_resource type="StyleBox" id="fold_title_collapsed"]
-script = ExtResource("arcade")
-content_margin_left = 14
-content_margin_top = 11.5
-content_margin_right = 14
-content_margin_bottom = 14.5
-bg_color = Color(0.248, 0.30698, 0.568705, 1)
-bottom_color = Color(0.160784, 0.213726, 0.45098, 1)
-shade_color = Color(0.118934, 0.158322, 0.335466, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.6
-lip = 3
-radius = 16
-
-[sub_resource type="StyleBox" id="fold_title_collapsed_hover"]
-script = ExtResource("arcade")
-content_margin_left = 14
-content_margin_top = 11.5
-content_margin_right = 14
-content_margin_bottom = 14.5
-bg_color = Color(0.3012, 0.356008, 0.599217, 1)
-bottom_color = Color(0.232549, 0.283725, 0.512451, 1)
-shade_color = Color(0.118934, 0.158322, 0.335466, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.6
-lip = 3
-radius = 16
+bg_color = Color(1, 1, 1, 0)
+border_color = Color(1, 1, 1, 1)
+border_width = 2.0
+lip = 0.0
+radius = 7.0
+shine = 0.0
+draw_center = false
+expand_margin_left = -3.0
+expand_margin_top = -3.0
+expand_margin_right = -3.0
+expand_margin_bottom = -3.0
 
 [sub_resource type="StyleBoxFlat" id="fold_panel"]
-content_margin_left = 14
-content_margin_top = 10
-content_margin_right = 14
-content_margin_bottom = 14
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
 bg_color = Color(0.14902, 0.2, 0.423529, 0.5)
 border_width_left = 1
 border_width_right = 1
@@ -882,179 +140,921 @@ border_width_bottom = 1
 border_color = Color(0.486275, 0.54902, 0.839216, 0.6)
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-corner_detail = 8
 
-[sub_resource type="StyleBox" id="tab_selected"]
+[sub_resource type="StyleBox" id="fold_title_collapsed_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 11.5
+content_margin_right = 14.0
+content_margin_bottom = 14.5
 script = ExtResource("arcade")
-content_margin_left = 20
-content_margin_top = 6.5
-content_margin_right = 20
-content_margin_bottom = 9.5
-bg_color = Color(0.306988, 0.525035, 0.975914, 1)
-bottom_color = Color(0.145571, 0.395529, 0.912389, 1)
-shade_color = Color(0.108404, 0.294543, 0.679439, 1)
+bottom_color = Color(0.232549, 0.283725, 0.512451, 1)
+bg_color = Color(0.3012, 0.356008, 0.599217, 1)
+shade_color = Color(0.118934, 0.158322, 0.335466, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+band = 0.0
+
+[sub_resource type="StyleBox" id="fold_title_collapsed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 11.5
+content_margin_right = 14.0
+content_margin_bottom = 14.5
+script = ExtResource("arcade")
+bottom_color = Color(0.160784, 0.213726, 0.45098, 1)
+bg_color = Color(0.248, 0.30698, 0.568705, 1)
+shade_color = Color(0.118934, 0.158322, 0.335466, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+band = 0.0
+
+[sub_resource type="StyleBox" id="fold_title_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 11.5
+content_margin_right = 14.0
+content_margin_bottom = 14.5
+script = ExtResource("arcade")
+bottom_color = Color(0.232549, 0.283725, 0.512451, 1)
+bg_color = Color(0.3012, 0.356008, 0.599217, 1)
+shade_color = Color(0.118934, 0.158322, 0.335466, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+band = 0.0
+
+[sub_resource type="StyleBox" id="fold_title"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 11.5
+content_margin_right = 14.0
+content_margin_bottom = 14.5
+script = ExtResource("arcade")
+bottom_color = Color(0.160784, 0.213726, 0.45098, 1)
+bg_color = Color(0.248, 0.30698, 0.568705, 1)
+shade_color = Color(0.118934, 0.158322, 0.335466, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+band = 0.0
+
+[sub_resource type="StyleBox" id="card"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 15.0
+script = ExtResource("arcade")
+bottom_color = Color(0.171961, 0.228235, 0.47647, 1)
+frame = 4.0
+frame_color = Color(0.222474, 0.467113, 0.972977, 1)
+frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
+bg_color = Color(0.14902, 0.2, 0.423529, 1)
+shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+lip = 3.0
+band = 0.0
+shine = 0.7
+inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
+shadow_color = Color(0, 0, 0, 0.135)
+shadow_size = 6
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBox" id="compact_disabled"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 3.5
+content_margin_right = 10.0
+content_margin_bottom = 6.5
+script = ExtResource("arcade")
+bottom_color = Color(0.189866, 0.230848, 0.421522, 1)
+bg_color = Color(0.222272, 0.261614, 0.444661, 1)
+shade_color = Color(0.157893, 0.192796, 0.355218, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 0.45)
+border_width = 2.0
+lip = 3.0
+radius = 10.0
+band = 0.0
+shine = 0.0
+
+[sub_resource type="StyleBox" id="compact_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 3.5
+content_margin_right = 10.0
+content_margin_bottom = 6.5
+script = ExtResource("arcade")
+bottom_color = Color(0.398062, 0.436708, 0.702124, 1)
+bg_color = Color(0.527246, 0.560958, 0.792492, 1)
+shade_color = Color(0.296429, 0.325208, 0.522859, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+radius = 10.0
+band = 0.0
+shine = 0.85
+
+[sub_resource type="StyleBox" id="compact_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 5.5
+content_margin_right = 10.0
+content_margin_bottom = 4.5
+script = ExtResource("arcade")
+bottom_color = Color(0.301697, 0.340043, 0.603395, 1)
+bg_color = Color(0.434183, 0.467633, 0.697365, 1)
+shade_color = Color(0.230581, 0.259887, 0.461161, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+radius = 10.0
+band = 0.0
+shine = 0.85
+pressed = true
+sink = 3.0
+
+[sub_resource type="StyleBox" id="compact_normal"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 3.5
+content_margin_right = 10.0
+content_margin_bottom = 6.5
+script = ExtResource("arcade")
+bottom_color = Color(0.329401, 0.371267, 0.658801, 1)
+bg_color = Color(0.46285, 0.499371, 0.750199, 1)
+shade_color = Color(0.248443, 0.28002, 0.496887, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+radius = 10.0
+band = 0.0
+shine = 0.85
+
+[sub_resource type="StyleBox" id="focus_coral"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("arcade")
+bg_color = Color(0.0300001, 0.0405882, 0.09, 0)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+lip = 0.0
+radius = 13.0
+shine = 0.0
+draw_center = false
+expand_margin_left = -3.0
+expand_margin_top = -3.0
+expand_margin_right = -3.0
+expand_margin_bottom = -3.0
+
+[sub_resource type="StyleBox" id="btn_danger_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.906994, 0.45187, 0.475276, 1)
+bg_color = Color(0.971208, 0.574184, 0.594603, 1)
+shade_color = Color(0.675421, 0.336499, 0.353929, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+
+[sub_resource type="StyleBox" id="btn_danger_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 11.0
+content_margin_right = 16.0
+content_margin_bottom = 9.0
+script = ExtResource("arcade")
+bottom_color = Color(0.849128, 0.373775, 0.398222, 1)
+bg_color = Color(0.920728, 0.506059, 0.527385, 1)
+shade_color = Color(0.632329, 0.278343, 0.296548, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+pressed = true
+sink = 3.0
+
+[sub_resource type="StyleBox" id="btn_danger"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.903327, 0.397633, 0.42364, 1)
+bg_color = Color(0.968009, 0.526871, 0.549558, 1)
+shade_color = Color(0.67269, 0.29611, 0.315477, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+
+[sub_resource type="StyleBox" id="focus_red"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("arcade")
+bg_color = Color(1, 1, 1, 0)
+border_color = Color(1, 1, 1, 1)
+lip = 0.0
+radius = 13.0
+shine = 0.0
+draw_center = false
+expand_margin_left = -3.0
+expand_margin_top = -3.0
+expand_margin_right = -3.0
+expand_margin_bottom = -3.0
+
+[sub_resource type="StyleBox" id="btn_danger_solid_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.891462, 0.222161, 0.256583, 1)
+bg_color = Color(0.957659, 0.3738, 0.403827, 1)
+shade_color = Color(0.663855, 0.165439, 0.191072, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+
+[sub_resource type="StyleBox" id="btn_danger_solid_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 11.0
+content_margin_right = 16.0
+content_margin_bottom = 9.0
+script = ExtResource("arcade")
+bottom_color = Color(0.728792, 0.117125, 0.148582, 1)
+bg_color = Color(0.793255, 0.259673, 0.287114, 1)
+shade_color = Color(0.581483, 0.093451, 0.11855, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+pressed = true
+sink = 3.0
+
+[sub_resource type="StyleBox" id="btn_danger_solid"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.897462, 0.228161, 0.262583, 1)
+bg_color = Color(0.957659, 0.3738, 0.403827, 1)
+shade_color = Color(0.676847, 0.150742, 0.177798, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+
+[sub_resource type="StyleBox" id="btn_danger_solid_glow_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.891462, 0.222161, 0.256583, 1)
+bg_color = Color(0.957659, 0.3738, 0.403827, 1)
+shade_color = Color(0.663855, 0.165439, 0.191072, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+shadow_color = Color(1, 0.698039, 0.117647, 1)
+shadow_size = 4
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBox" id="btn_danger_solid_glow_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 11.0
+content_margin_right = 16.0
+content_margin_bottom = 9.0
+script = ExtResource("arcade")
+bottom_color = Color(0.728792, 0.117125, 0.148582, 1)
+bg_color = Color(0.793255, 0.259673, 0.287114, 1)
+shade_color = Color(0.581483, 0.093451, 0.11855, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+pressed = true
+sink = 3.0
+shadow_color = Color(1, 0.698039, 0.117647, 1)
+shadow_size = 4
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBox" id="btn_danger_solid_glow"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.897462, 0.228161, 0.262583, 1)
+bg_color = Color(0.957659, 0.3738, 0.403827, 1)
+shade_color = Color(0.676847, 0.150742, 0.177798, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+shadow_color = Color(1, 0.698039, 0.117647, 1)
+shadow_size = 4
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBox" id="hud"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 15.0
+script = ExtResource("arcade")
+bottom_color = Color(0.156863, 0.208824, 0.44196, 1)
+frame = 4.0
+frame_color = Color(0.222474, 0.467113, 0.972977, 1)
+frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
+bg_color = Color(0.121569, 0.164706, 0.360784, 0.92)
+shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+lip = 3.0
+band = 0.0
+shine = 0.7
+inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
+
+[sub_resource type="StyleBox" id="notice"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 14.0
+script = ExtResource("arcade")
+bottom_color = Color(0.152334, 0.202676, 0.428696, 1)
+frame = 3.0
+frame_color = Color(0.222474, 0.467113, 0.972977, 1)
+frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
+bg_color = Color(0.113334, 0.153529, 0.336666, 1)
+shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+lip = 3.0
+band = 0.0
+shine = 0.7
+inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
+shadow_color = Color(0, 0, 0, 0.2025)
+shadow_size = 12
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBox" id="panel"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("arcade")
+bottom_color = Color(0.156863, 0.208824, 0.44196, 1)
+frame = 6.0
+frame_color = Color(0.222474, 0.467113, 0.972977, 1)
+frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
+bg_color = Color(0.121569, 0.164706, 0.360784, 1)
+shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+radius = 24.0
+band = 0.0
+shine = 0.7
+inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
+shadow_color = Color(0, 0, 0, 0.2475)
+shadow_size = 18
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBox" id="popup"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 14.0
+script = ExtResource("arcade")
+bottom_color = Color(0.149314, 0.198579, 0.419853, 1)
+frame = 3.0
+frame_color = Color(0.222474, 0.467113, 0.972977, 1)
+frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
+bg_color = Color(0.107843, 0.146079, 0.320588, 1)
+shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+lip = 3.0
+band = 0.0
+shine = 0.7
+inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
+shadow_color = Color(0, 0, 0, 0.2475)
+shadow_size = 16
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="icon_hover"]
+bg_color = Color(0.94902, 0.960784, 1, 0.1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBox" id="list_disabled"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("arcade")
+bottom_color = Color(0.160784, 0.213726, 0.45098, 1)
+bg_color = Color(0.248, 0.30698, 0.568705, 1)
+shade_color = Color(0.118934, 0.158322, 0.335466, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 0.45)
+border_width = 2.0
+lip = 3.0
+radius = 6.0
+band = 0.0
+shine = 0.0
+
+[sub_resource type="StyleBox" id="list_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("arcade")
+bottom_color = Color(0.232549, 0.283725, 0.512451, 1)
+bg_color = Color(0.3012, 0.356008, 0.599217, 1)
+shade_color = Color(0.118934, 0.158322, 0.335466, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+radius = 6.0
+band = 0.0
+
+[sub_resource type="StyleBox" id="list_normal"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("arcade")
+bottom_color = Color(0.160784, 0.213726, 0.45098, 1)
+bg_color = Color(0.248, 0.30698, 0.568705, 1)
+shade_color = Color(0.118934, 0.158322, 0.335466, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 3.0
+radius = 6.0
+band = 0.0
+
+[sub_resource type="StyleBox" id="focus_go"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("arcade")
+bg_color = Color(0.0300001, 0.0405882, 0.09, 0)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+lip = 0.0
+radius = 13.0
+shine = 0.0
+draw_center = false
+expand_margin_left = -3.0
+expand_margin_top = -3.0
+expand_margin_right = -3.0
+expand_margin_bottom = -3.0
+
+[sub_resource type="StyleBox" id="btn_primary_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.306608, 0.807128, 0.260048, 1)
+bg_color = Color(0.447467, 0.88409, 0.40685, 1)
+shade_color = Color(0.228325, 0.601053, 0.193653, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+
+[sub_resource type="StyleBox" id="btn_primary_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 11.0
+content_margin_right = 16.0
+content_margin_bottom = 9.0
+script = ExtResource("arcade")
+bottom_color = Color(0.222058, 0.744823, 0.173428, 1)
+bg_color = Color(0.37371, 0.829739, 0.331288, 1)
+shade_color = Color(0.165362, 0.554655, 0.129148, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+pressed = true
+sink = 3.0
+
+[sub_resource type="StyleBox" id="btn_primary"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.236231, 0.792365, 0.184498, 1)
+bg_color = Color(0.386074, 0.871212, 0.340945, 1)
+shade_color = Color(0.175917, 0.590059, 0.137392, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+
+[sub_resource type="StyleBox" id="btn_primary_glow_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.306608, 0.807128, 0.260048, 1)
+bg_color = Color(0.447467, 0.88409, 0.40685, 1)
+shade_color = Color(0.228325, 0.601053, 0.193653, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+shadow_color = Color(1, 0.698039, 0.117647, 1)
+shadow_size = 4
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBox" id="btn_primary_glow_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 11.0
+content_margin_right = 16.0
+content_margin_bottom = 9.0
+script = ExtResource("arcade")
+bottom_color = Color(0.222058, 0.744823, 0.173428, 1)
+bg_color = Color(0.37371, 0.829739, 0.331288, 1)
+shade_color = Color(0.165362, 0.554655, 0.129148, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+pressed = true
+sink = 3.0
+shadow_color = Color(1, 0.698039, 0.117647, 1)
+shadow_size = 4
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBox" id="btn_primary_glow"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+script = ExtResource("arcade")
+bottom_color = Color(0.236231, 0.792365, 0.184498, 1)
+bg_color = Color(0.386074, 0.871212, 0.340945, 1)
+shade_color = Color(0.175917, 0.590059, 0.137392, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.85
+shadow_color = Color(1, 0.698039, 0.117647, 1)
+shadow_size = 4
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBox" id="scroll_grab"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("arcade")
+bottom_color = Color(0.329401, 0.371267, 0.658801, 1)
+bg_color = Color(0.46285, 0.499371, 0.750199, 1)
+shade_color = Color(0.248443, 0.28002, 0.496887, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 1.5
+lip = 0.0
+radius = 3.0
+band = 0.0
+shine = 0.0
+
+[sub_resource type="StyleBox" id="scroll_grab_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("arcade")
+bottom_color = Color(0.329401, 0.371267, 0.658801, 1)
+bg_color = Color(0.46285, 0.499371, 0.750199, 1)
+shade_color = Color(0.248443, 0.28002, 0.496887, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 1.5
+lip = 0.0
+radius = 3.0
+band = 0.0
+shine = 0.0
+
+[sub_resource type="StyleBoxFlat" id="scroll_track"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.690712, 0.715887, 0.866935, 0.14)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="separator"]
+content_margin_left = 0.0
+content_margin_top = 0.5
+content_margin_right = 0.0
+content_margin_bottom = 0.5
+bg_color = Color(0.486275, 0.54902, 0.839216, 0.8)
+
+[sub_resource type="StyleBox" id="slider_grab"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 3.0
+script = ExtResource("arcade")
+bg_color = Color(0.154863, 0.420775, 0.970627, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 0.0
+radius = 4.0
+band = 0.0
+shine = 0.75
+
+[sub_resource type="StyleBox" id="slider_grab_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 3.0
+script = ExtResource("arcade")
+bg_color = Color(0.154863, 0.420775, 0.970627, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 0.0
+radius = 4.0
+band = 0.0
+shine = 0.75
+
+[sub_resource type="StyleBox" id="slider_track"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 3.0
+script = ExtResource("arcade")
+bottom_color = Color(0.0529099, 0.0754036, 0.180376, 1)
+bg_color = Color(0.054902, 0.078431, 0.188235, 0.9)
+shade_color = Color(0.0486765, 0.0689703, 0.163676, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 0.0
+radius = 4.0
+band = 0.0
+shine = 0.0
+sunken = true
+
+[sub_resource type="StyleBox" id="edit_focus"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+script = ExtResource("arcade")
+bottom_color = Color(0.13804, 0.185882, 0.398431, 1)
+bg_color = Color(0.121569, 0.164706, 0.360784, 1)
+shade_color = Color(0.131557, 0.241527, 0.543737, 1)
+border_color = Color(0.356863, 0.54902, 1, 1)
+lip = 0.0
+radius = 10.0
+band = 0.0
+shine = 0.0
+sunken = true
+
+[sub_resource type="StyleBox" id="edit_normal"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+script = ExtResource("arcade")
+bottom_color = Color(0.13804, 0.185882, 0.398431, 1)
+bg_color = Color(0.121569, 0.164706, 0.360784, 1)
+shade_color = Color(0.110581, 0.149812, 0.32829, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 1)
 border_width = 2.5
-band = 0
-shine = 0.85
-lip = 3
-radius = 10
+lip = 0.0
+radius = 10.0
+band = 0.0
+shine = 0.0
+sunken = true
+
+[sub_resource type="StyleBox" id="panel_solid"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("arcade")
+bottom_color = Color(0.156863, 0.208824, 0.44196, 1)
+frame = 5.0
+frame_color = Color(0.222474, 0.467113, 0.972977, 1)
+frame_bottom = Color(0.136279, 0.370282, 0.854152, 1)
+bg_color = Color(0.121569, 0.164706, 0.360784, 1)
+shade_color = Color(0.0986747, 0.249691, 0.574345, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+band = 0.0
+shine = 0.7
+inner_line = Color(0.0300001, 0.0405882, 0.09, 1)
+
+[sub_resource type="StyleBox" id="menu_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+script = ExtResource("arcade")
+bottom_color = Color(0.136698, 0.281064, 0.637897, 1)
+bg_color = Color(0.134221, 0.262012, 0.592524, 1)
+shade_color = Color(0.102955, 0.195585, 0.441767, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 0.0
+radius = 10.0
+band = 0.0
+shine = 0.5
+
+[sub_resource type="StyleBoxFlat" id="menu_separator"]
+content_margin_left = 0.0
+content_margin_top = 8.0
+content_margin_right = 0.0
+content_margin_bottom = 8.0
+bg_color = Color(0.486275, 0.54902, 0.839216, 0.7)
+
+[sub_resource type="StyleBox" id="bar_bg"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+script = ExtResource("arcade")
+bottom_color = Color(0.0529099, 0.0754036, 0.180376, 1)
+bg_color = Color(0.054902, 0.078431, 0.188235, 0.85)
+shade_color = Color(0.0486765, 0.0689703, 0.163676, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 0.0
+radius = 10.0
+band = 0.0
+shine = 0.0
+sunken = true
+
+[sub_resource type="StyleBox" id="bar_fill"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("arcade")
+bg_color = Color(0.356863, 0.54902, 1, 1)
+border_color = Color(0.0300001, 0.0405882, 0.09, 1)
+border_width = 2.0
+lip = 0.0
+radius = 10.0
+band = 0.0
+shine = 0.75
 
 [sub_resource type="StyleBox" id="tab_unselected"]
-script = ExtResource("arcade")
-content_margin_left = 20
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 20.0
 content_margin_top = 6.5
-content_margin_right = 20
+content_margin_right = 20.0
 content_margin_bottom = 9.5
-bg_color = Color(0.46285, 0.499371, 0.750199, 1)
+script = ExtResource("arcade")
 bottom_color = Color(0.329401, 0.371267, 0.658801, 1)
+bg_color = Color(0.46285, 0.499371, 0.750199, 1)
 shade_color = Color(0.248443, 0.28002, 0.496887, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 1)
 border_width = 2.5
-band = 0
+lip = 3.0
+radius = 10.0
+band = 0.0
 shine = 0.85
-lip = 3
-radius = 10
 
 [sub_resource type="StyleBox" id="tab_hovered"]
-script = ExtResource("arcade")
-content_margin_left = 20
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 20.0
 content_margin_top = 6.5
-content_margin_right = 20
+content_margin_right = 20.0
 content_margin_bottom = 9.5
-bg_color = Color(0.527246, 0.560958, 0.792492, 1)
+script = ExtResource("arcade")
 bottom_color = Color(0.398062, 0.436708, 0.702124, 1)
+bg_color = Color(0.527246, 0.560958, 0.792492, 1)
 shade_color = Color(0.296429, 0.325208, 0.522859, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 1)
 border_width = 2.5
-band = 0
+lip = 3.0
+radius = 10.0
+band = 0.0
 shine = 0.85
-lip = 3
-radius = 10
 
-[sub_resource type="StyleBox" id="btn_danger_pressed"]
+[sub_resource type="StyleBox" id="tab_selected"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 20.0
+content_margin_top = 6.5
+content_margin_right = 20.0
+content_margin_bottom = 9.5
 script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 11
-content_margin_right = 16
-content_margin_bottom = 9
-bg_color = Color(0.920728, 0.506059, 0.527385, 1)
-bottom_color = Color(0.849128, 0.373775, 0.398222, 1)
-shade_color = Color(0.632329, 0.278343, 0.296548, 1)
+bottom_color = Color(0.145571, 0.395529, 0.912389, 1)
+bg_color = Color(0.306988, 0.525035, 0.975914, 1)
+shade_color = Color(0.108404, 0.294543, 0.679439, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-band = 0
+border_width = 2.5
+lip = 3.0
+radius = 10.0
+band = 0.0
 shine = 0.85
-lip = 4
-pressed = true
-sink = 3
-radius = 16
 
-[sub_resource type="StyleBox" id="compact_pressed"]
+[sub_resource type="StyleBox" id="tooltip"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
 script = ExtResource("arcade")
-content_margin_left = 10
-content_margin_top = 5.5
-content_margin_right = 10
-content_margin_bottom = 4.5
-bg_color = Color(0.434183, 0.467633, 0.697365, 1)
-bottom_color = Color(0.301697, 0.340043, 0.603395, 1)
-shade_color = Color(0.230581, 0.259887, 0.461161, 1)
+bottom_color = Color(1, 0.803725, 0.426471, 1)
+bg_color = Color(1, 0.864118, 0.602941, 1)
+shade_color = Color(0.709, 0.500804, 0.109353, 1)
 border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 2
-band = 0
-shine = 0.85
-lip = 3
-pressed = true
-sink = 3
-radius = 10
-
-[sub_resource type="StyleBox" id="compact_disabled"]
-script = ExtResource("arcade")
-content_margin_left = 10
-content_margin_top = 3.5
-content_margin_right = 10
-content_margin_bottom = 6.5
-bg_color = Color(0.222272, 0.261614, 0.444661, 1)
-bottom_color = Color(0.189866, 0.230848, 0.421522, 1)
-shade_color = Color(0.157893, 0.192796, 0.355218, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 0.45)
-border_width = 2
-band = 0
-shine = 0
-lip = 3
-radius = 10
-
-[sub_resource type="StyleBox" id="list_disabled"]
-script = ExtResource("arcade")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.248, 0.30698, 0.568705, 1)
-bottom_color = Color(0.160784, 0.213726, 0.45098, 1)
-shade_color = Color(0.118934, 0.158322, 0.335466, 1)
-border_color = Color(0.0300001, 0.0405882, 0.09, 0.45)
-border_width = 2
-band = 0
-shine = 0
-lip = 3
-radius = 6
-
-[sub_resource type="StyleBox" id="focus_go"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.0300001, 0.0405882, 0.09, 0)
-draw_center = false
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-lip = 0
-shine = 0
-radius = 13
-expand_margin_left = -3
-expand_margin_top = -3
-expand_margin_right = -3
-expand_margin_bottom = -3
-
-[sub_resource type="StyleBox" id="focus_red"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(1, 1, 1, 0)
-draw_center = false
-border_color = Color(1, 1, 1, 1)
-border_width = 3
-lip = 0
-shine = 0
-radius = 13
-expand_margin_left = -3
-expand_margin_top = -3
-expand_margin_right = -3
-expand_margin_bottom = -3
-
-[sub_resource type="StyleBox" id="focus_coral"]
-script = ExtResource("arcade")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.0300001, 0.0405882, 0.09, 0)
-draw_center = false
-border_color = Color(0.0300001, 0.0405882, 0.09, 1)
-border_width = 3
-lip = 0
-shine = 0
-radius = 13
-expand_margin_left = -3
-expand_margin_top = -3
-expand_margin_right = -3
-expand_margin_bottom = -3
+border_width = 2.0
+lip = 0.0
+radius = 10.0
+band = 0.0
+shine = 0.0
 
 [resource]
+default_font_size = 16
 BoxContainer/constants/separation = 12
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_disabled_color = Color(0.740236, 0.749412, 0.78, 1)
@@ -1533,4 +1533,3 @@ VSlider/icons/grabber_highlight = ExtResource("grabber_highlight")
 VSlider/styles/grabber_area = SubResource("slider_grab")
 VSlider/styles/grabber_area_highlight = SubResource("slider_grab_hover")
 VSlider/styles/slider = SubResource("slider_track")
-default_font_size = 16
