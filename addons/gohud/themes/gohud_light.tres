@@ -809,6 +809,8 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn0t7"]
+
 [resource]
 default_font_size = 16
 BoxContainer/constants/separation = 12
@@ -1177,7 +1179,7 @@ VScrollBar/styles/grabber_highlight = SubResource("scroll_grab_hover")
 VScrollBar/styles/grabber_pressed = SubResource("scroll_grab_hover")
 VScrollBar/styles/scroll = SubResource("scroll_track")
 VScrollBar/styles/scroll_focus = SubResource("scroll_track")
-VSeparator/styles/separator = SubResource("separator")
+VSeparator/styles/separator = SubResource("StyleBoxEmpty_sn0t7")
 VSlider/icons/grabber = ExtResource("grabber")
 VSlider/icons/grabber_disabled = ExtResource("grabber_disabled")
 VSlider/icons/grabber_highlight = ExtResource("grabber_highlight")

@@ -1,6 +1,6 @@
-[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://cl1ghml6fsl2n"]
+[gd_resource type="FontVariation" format=3 uid="uid://cl1ghml6fsl2n"]
 
-[ext_resource type="FontFile" uid="uid://dvfnuih886qyx" path="res://UI/Font/Alan_Sans/AlanSans-VariableFont_wght.ttf" id="1_sscmv"]
+[ext_resource type="FontFile" uid="uid://dvfnuih886qyx" path="res://Asset/Font/Alan_Sans/AlanSans-VariableFont_wght.ttf" id="1_sscmv"]
 
 [resource]
 base_font = ExtResource("1_sscmv")
