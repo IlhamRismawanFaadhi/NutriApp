@@ -42,6 +42,52 @@ var meals: int
 
 @onready var days_near_calories_goal_label_value: Label = $VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/DaysNearCaloriesGoal/VBoxContainer/Value
 @onready var days_near_protein_goal_label_value: Label = $VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration2/VBoxContainer/AutoAdde3/DaysNearProteinGoal/VBoxContainer/Value
+
+## === Suggest === ##
+# Food Selected
+@onready var texture_makanan_input: TextureRect =$VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/LogMeal/HBoxContainer/TextureMakananInput
+@onready var nama_makanan_label: Label = $VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/LogMeal/HBoxContainer/VBoxContainer/NamaMakanan
+# Progress
+@onready var protein_gap_label_value: Label = $VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/ProteinGap/ValueCount/ProValue
+@onready var carbo_left_label_value: Label = $VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/CarboLeft/ValueCount/ProValue
+@onready var fat_gap_label_value: Label = $VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/FatGap/ValueCount/ProValue
+@onready var calories_gap_label_value: Label = $VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/SpecMakanan/CaloriesGap/ValueCount/ProValue
+
+# Food suggest panel
+@onready var parent_food_suggest: VBoxContainer= $VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/ParentFoodSuggest
+@onready var preload_food_suggested_panel = preload("res://Component/FoodSuggestPanel/food_suggest_panel.tscn")
+
+## === Scan === ##
+# Photo
+@onready var photo: TextureRect = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/Photo
+
+# Food or drink
+@onready var food_name_line_edit:LineEdit = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/ItemName/FoodName
+@onready var eating_time_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/TimeEaten/EatingTime
+@onready var breakfast_button: Button = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/Type/HBoxContainer/Breakfast
+@onready var launch_button: Button = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/Type/HBoxContainer/Launch
+@onready var dinner_button: Button = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/Type/HBoxContainer2/Dinner
+@onready var snack_button: Button = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/Type/HBoxContainer2/Snack
+@onready var calorie_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi1/Calories/CaloriesValue
+@onready var protein_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi1/Protein/ProteinValue
+@onready var carbo_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi2/Carbo/CarboValue
+@onready var fat_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi2/Fat/FatValue
+
+## === Chat === ##
+# Using log today
+@onready var calorie_label_value: Label = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/LogProgressToday/VBoxContainer/HBoxContainer/Kcal/VBoxContainer/Value
+@onready var protein_label_value: Label = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/LogProgressToday/VBoxContainer/HBoxContainer/Protein/VBoxContainer/Value
+@onready var water_label_value: Label = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/LogProgressToday/VBoxContainer/HBoxContainer/Water/VBoxContainer/Value
+
+# Chat panel
+@onready var chat_panel: VBoxContainer = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Chat/ScrollContainer/ChatPanel
+@onready var preload_ai_chat = preload("res://Component/AIChat/ai_chat.tscn")
+@onready var preload_human_chat = preload("res://Component/HumanChat/HumanChat.tscn")
+
+# Texting
+@onready var text_writing: TextEdit = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/TextWrite/TextWriting
+
+
 func _ready() -> void:
 	chage_display_by_index(0)
 func chage_display_by_index(index: int)->void:
@@ -83,9 +129,24 @@ func _on_scan_pressed() -> void:
 	chage_display_by_index(2)
 	pass # Replace with function body.
 
+func _on_add_to_today_pressed() -> void:
+	pass # Replace with function body.
+
 ## === page Chat function === ##
 func _on_ai_chat_pressed() -> void:
 	chage_display_by_index(3)
+	pass # Replace with function body.
+
+func _on_suggest_button_1_pressed() -> void:
+	var suggest_chat: String = "Explain my day"
+
+func _on_suggest_button_2_pressed() -> void:
+	var suggest_chat: String = "Suggest the dinner"
+
+func _on_suggest_button_3_pressed() -> void:
+	var suggest_chat: String = "What im low on?"
+
+func _on_send_text_pressed() -> void:
 	pass # Replace with function body.
 
 ## === page login function === ##
