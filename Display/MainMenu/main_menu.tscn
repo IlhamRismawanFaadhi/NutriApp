@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://c4qmwpkrkhpb4" path="res://Component/FoodSuggestPanel/food_suggest_panel.tscn" id="8_pfg36"]
 [ext_resource type="Texture2D" uid="uid://08r5rb57byle" path="res://Asset/Image/NasiPadang.jpg" id="9_l4ygr"]
 [ext_resource type="Texture2D" uid="uid://b3wyyrwnj0df6" path="res://addons/gohud/icons/default/search.svg" id="9_prsyg"]
-[ext_resource type="Texture2D" uid="uid://dvledmi7sfa0n" path="res://Asset/Icon/PNG/Black/2x/singleplayer.png" id="9_ryh23"]
 [ext_resource type="FontFile" uid="uid://dvfnuih886qyx" path="res://Asset/Font/Alan_Sans/AlanSans-VariableFont_wght.ttf" id="9_yygku"]
 [ext_resource type="Theme" uid="uid://dlo8vqnke48cw" path="res://addons/gohud/themes/gohud_light.tres" id="11_prsyg"]
 [ext_resource type="PackedScene" uid="uid://b7ttqwo8ryfaf" path="res://Component/AIChat/ai_chat.tscn" id="15_6mq66"]
@@ -20,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dio3naewmhbqr" path="res://addons/gohud/icons/default/mobile.svg" id="16_6mq66"]
 [ext_resource type="PackedScene" uid="uid://dh2m4r8uh80rg" path="res://Component/HumanChat/HumanChat.tscn" id="16_j72xx"]
 [ext_resource type="Texture2D" uid="uid://bamg11u8suoe7" path="res://addons/gohud/icons/default/user.svg" id="17_j72xx"]
+[ext_resource type="Theme" uid="uid://s5e6i8vg7k63" path="res://addons/gohud/themes/gohud_medieval_dark.tres" id="18_6mq66"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhunq"]
 
@@ -142,7 +142,6 @@ font = SubResource("FontVariation_bhunq")
 [sub_resource type="LabelSettings" id="LabelSettings_j72xx"]
 font = SubResource("FontVariation_qr0ht")
 font_size = 20
-font_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_1esiv"]
 base_font = ExtResource("9_yygku")
@@ -150,7 +149,6 @@ variation_embolden = 0.45
 
 [sub_resource type="LabelSettings" id="LabelSettings_6mq66"]
 font = SubResource("FontVariation_bhunq")
-font_color = Color(0.17785347, 0.17785347, 0.17785347, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_riqys"]
 base_font = ExtResource("5_p3fls")
@@ -158,7 +156,6 @@ base_font = ExtResource("5_p3fls")
 [sub_resource type="LabelSettings" id="LabelSettings_ryh23"]
 font = SubResource("FontVariation_riqys")
 font_size = 12
-font_color = Color(0.35006392, 0.35006395, 0.35006392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhunq"]
 draw_center = false
@@ -219,6 +216,15 @@ font_color = Color(0.18072194, 0.18072197, 0.18072197, 1)
 font = SubResource("FontVariation_bhunq")
 font_color = Color(0.34108615, 0.34108615, 0.34108615, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_j72xx"]
+base_font = ExtResource("5_p3fls")
+variation_embolden = 0.4
+
+[sub_resource type="LabelSettings" id="LabelSettings_dp3cm"]
+font = SubResource("FontVariation_j72xx")
+font_size = 18
+font_color = Color(0.95070344, 0.9507033, 0.9507033, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ygr"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -271,7 +277,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 9.85
 
 [node name="Home" type="Control" parent="VBoxContainer/Display" unique_id=484896149]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -396,7 +401,6 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-value = 75.76
 show_percentage = false
 
 [node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer/Calories" unique_id=1183814327]
@@ -449,7 +453,6 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-value = 22.1
 show_percentage = false
 
 [node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HBoxContainer2/Crabs" unique_id=248048362]
@@ -485,7 +488,6 @@ vertical_alignment = 1
 [node name="Water" type="ProgressBar" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=622002801]
 layout_mode = 2
 size_flags_vertical = 3
-value = 62.52
 show_percentage = false
 
 [node name="Label" type="Label" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Water" unique_id=220885027]
@@ -867,7 +869,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ynj3n")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Suggest" unique_id=1900125732]
 layout_mode = 1
@@ -1374,12 +1375,32 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.25
 
+[node name="InformasiGizi3" type="HBoxContainer" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer" unique_id=1483092711]
+layout_mode = 2
+
+[node name="Water" type="VBoxContainer" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi3" unique_id=695472707]
+custom_minimum_size = Vector2(0, 87.37)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi3/Water" unique_id=16190436]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Water"
+label_settings = SubResource("LabelSettings_0hlvs")
+
+[node name="WaterValue" type="SpinBox" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi3/Water" unique_id=1669621415]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.25
+
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/Scan/HBoxContainer" unique_id=107504691]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="AiChat" type="Control" parent="VBoxContainer/Display" unique_id=1664417278]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1653,6 +1674,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_y86a1")
 [node name="PersonalInformation" type="PanelContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=114600909]
 custom_minimum_size = Vector2(0, 99.67)
 layout_mode = 2
+theme = ExtResource("18_6mq66")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/PersonalInformation" unique_id=925261134]
 layout_mode = 2
@@ -1660,7 +1682,7 @@ layout_mode = 2
 [node name="PhotoProfile" type="TextureRect" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/PersonalInformation/HBoxContainer" unique_id=1332438402]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("9_ryh23")
+texture = ExtResource("17_j72xx")
 expand_mode = 1
 stretch_mode = 5
 
@@ -1668,8 +1690,153 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.95
-text = "Name"
+text = "Ilham Rismawan Faadhi"
+label_settings = SubResource("LabelSettings_dp3cm")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=157401561]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_y86a1")
+
+[node name="Hydration" type="PanelContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=1345528380]
+custom_minimum_size = Vector2(0, 197.8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3xd07")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration" unique_id=1712128029]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=73176046]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Nutrition Target"
 label_settings = ExtResource("4_n8jl1")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=123337162]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.4
+theme_override_styles/separator = SubResource("StyleBoxLine_3xd07")
+
+[node name="Status" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=507669554]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ResetHydration" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/Status" unique_id=1490406523]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reset"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=305577828]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jq8tk")
+
+[node name="ManualAdded2" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=130867864]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2" unique_id=477933417]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer" unique_id=1955719624]
+layout_mode = 2
+text = "Calories (kcal)"
+label_settings = SubResource("LabelSettings_yygku")
+vertical_alignment = 1
+
+[node name="CaloriesTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer" unique_id=116636111]
+layout_mode = 2
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2" unique_id=1688441000]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer2" unique_id=672866084]
+layout_mode = 2
+text = "Protein (g)"
+label_settings = SubResource("LabelSettings_yygku")
+vertical_alignment = 1
+
+[node name="ProteinTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer2" unique_id=1524650158]
+layout_mode = 2
+min_value = 1.0
+max_value = 10000.0
+value = 32.0
+
+[node name="ManualAdded" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1988849245]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded" unique_id=967812711]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer" unique_id=1483176639]
+layout_mode = 2
+text = "Carbs (g)"
+label_settings = SubResource("LabelSettings_yygku")
+vertical_alignment = 1
+
+[node name="CarbsTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer" unique_id=265884915]
+layout_mode = 2
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded" unique_id=520884193]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer2" unique_id=2037531967]
+layout_mode = 2
+text = "Fat (g)"
+label_settings = SubResource("LabelSettings_yygku")
+vertical_alignment = 1
+
+[node name="FatTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer2" unique_id=108572060]
+layout_mode = 2
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+
+[node name="ManualAdded3" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1829399845]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded3" unique_id=494897364]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded3/VBoxContainer" unique_id=1993908906]
+layout_mode = 2
+text = "Water (L)"
+label_settings = SubResource("LabelSettings_yygku")
+vertical_alignment = 1
+
+[node name="WaterTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded3/VBoxContainer" unique_id=362755532]
+layout_mode = 2
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1577443774]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jq8tk")
+
+[node name="SetTarget" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=2086983836]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Set Target"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=1089788718]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_y86a1")
 
 [node name="LogOut" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=984772458]
 layout_mode = 2
@@ -1755,6 +1922,9 @@ expand_icon = true
 [connection signal="pressed" from="VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/ScrollContainer/Suggest/SuggestButton2" to="." method="_on_suggest_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/ScrollContainer/Suggest/SuggestButton3" to="." method="_on_suggest_button_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/TextWrite/SendText" to="." method="_on_send_text_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/Status/ResetHydration" to="." method="_on_reset_hydration_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/SetTarget" to="." method="_on_set_target_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/LogOut" to="." method="_on_log_out_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Menu/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Menu/Suggested" to="." method="_on_suggested_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Menu/Scan" to="." method="_on_scan_pressed"]

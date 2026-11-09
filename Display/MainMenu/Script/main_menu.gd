@@ -1,19 +1,62 @@
 extends Control
+## ==+== Account Variable ==+== ##
+var username_account: StringName
 ## ==+== Primary Variable ==+== ##
 #maximum
-var maximum_calories : float
-var maximum_protein : float
-var maximum_carbo : float
-var maximum_fat : float
-var maximum_water: float
+var maximum_calories : float : 
+	set(value):
+		if maximum_calories != value:
+			maximum_calories = value
+			calories_progress_bar.max_value = maximum_calories * 2 #nanti kalo misal lebih dari 50% bakal dikatakan berlebihan
+var maximum_protein : float :
+	set(value):
+		if maximum_protein != value:
+			maximum_protein = value
+			protein_progress_bar.max_value = maximum_protein * 2 #nanti kalo misal lebih dari 50% bakal dikatakan berlebihan
+var maximum_carbo : float : 
+	set(value):
+		if maximum_carbo != value:
+			maximum_carbo = value
+			carbo_progress_bar.max_value = maximum_carbo * 2 #nanti kalo misal lebih dari 50% bakal dikatakan berlebihan
+var maximum_fat : float:
+	set(value):
+		if maximum_fat != value:
+			maximum_fat = value
+			fat_progress_bar.max_value = maximum_fat * 2 #nanti kalo misal lebih dari 50% bakal dikatakan berlebihan
+var maximum_water: float:
+	set(value):
+		if maximum_water != value:
+			maximum_water = value
+			water_progress_bar.max_value = maximum_water * 2 #nanti kalo misal lebih dari 50% bakal dikatakan berlebihan
 #minimum
-var calories : float
-var protein : float
-var carbo : float
-var fat : float
-var water: float
+var calories : float:
+	set(value):
+		if calories != value and value < calories_progress_bar.max_value :
+			calories = value
+			calories_progress_bar.value = calories
+var protein : float:
+	set(value):
+		if protein != value and value < protein_progress_bar.max_value:
+			protein = value
+			protein_progress_bar.value = protein
+var carbo : float:
+	set(value):
+		if carbo != value and value < carbo_progress_bar.max_value:
+			carbo = value
+			carbo_progress_bar.value = carbo
+var fat : float:
+	set(value):
+		if fat != value and value < fat_progress_bar.max_value:
+			fat = value
+			fat_progress_bar.value = fat
+var water: float:
+	set(value):
+		if water != value and value < water_progress_bar.max_value:
+			water = value
+			water_progress_bar.value = water
 #aditional
 var meals: int
+#every meal
 
 ## === Home === ##
 # progress panel
@@ -72,7 +115,7 @@ var meals: int
 @onready var protein_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi1/Protein/ProteinValue
 @onready var carbo_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi2/Carbo/CarboValue
 @onready var fat_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi2/Fat/FatValue
-
+@onready var water_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi3/Water/WaterValue
 ## === Chat === ##
 # Using log today
 @onready var calorie_label_value: Label = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/LogProgressToday/VBoxContainer/HBoxContainer/Kcal/VBoxContainer/Value
@@ -87,7 +130,13 @@ var meals: int
 # Texting
 @onready var text_writing: TextEdit = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/TextWrite/TextWriting
 
-
+## === Chat === ##
+# Nutrition Target
+@onready var calories_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer/CaloriesTarget
+@onready var protein_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer2/ProteinTarget
+@onready var carbo_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer/CarbsTarget
+@onready var fat_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer2/FatTarget
+@onready var water_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded3/VBoxContainer/WaterTarget
 func _ready() -> void:
 	chage_display_by_index(0)
 func chage_display_by_index(index: int)->void:
@@ -104,10 +153,6 @@ func chage_display_by_index(index: int)->void:
 ## === page Home function === ##
 func _on_home_pressed() -> void:
 	chage_display_by_index(0)
-	pass # Replace with function body.
-
-# Hydration Panel Button
-func _on_reset_hydration_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_auto_add_hydration_250_pressed() -> void:
@@ -128,9 +173,14 @@ func _on_suggested_pressed() -> void:
 func _on_scan_pressed() -> void:
 	chage_display_by_index(2)
 	pass # Replace with function body.
-
+func food_or_drink_assign() ->void:
+	calories += calorie_value_spin_box.value
+	protein += protein_value_spin_box.value
+	carbo += carbo_value_spin_box.value
+	fat+= fat_value_spin_box.value
+	water += water_value_spin_box.value
 func _on_add_to_today_pressed() -> void:
-	pass # Replace with function body.
+	food_or_drink_assign()
 
 ## === page Chat function === ##
 func _on_ai_chat_pressed() -> void:
@@ -152,4 +202,17 @@ func _on_send_text_pressed() -> void:
 ## === page login function === ##
 func _on_profile_pressed() -> void:
 	chage_display_by_index(4)
+	pass # Replace with function body.
+
+func _on_reset_hydration_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_set_target_pressed() -> void:
+	maximum_calories = calories_target_spin_box.value
+	maximum_carbo = carbo_target_spin_box.value
+	maximum_fat = fat_target_spin_box.value
+	maximum_protein = protein_target_spin_box.value
+	maximum_water = water_target_spin_box.value
+	
+func _on_log_out_pressed() -> void:
 	pass # Replace with function body.

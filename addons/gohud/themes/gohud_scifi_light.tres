@@ -1,689 +1,717 @@
-[gd_resource type="Theme" load_steps=80 format=3]
+[gd_resource type="Theme" format=3 uid="uid://w65e7l5bltn6"]
 
-[ext_resource type="Script" path="res://addons/gohud/widgets/go_stylebox_cut.gd" id="cut"]
-[ext_resource type="Script" path="res://addons/gohud/widgets/go_stylebox_bracket.gd" id="bracket"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/toggle_on.svg" id="toggle_on"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/toggle_on_mirrored.svg" id="toggle_on_mirrored"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/toggle_on_disabled.svg" id="toggle_on_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/toggle_on_disabled_mirrored.svg" id="toggle_on_disabled_mirrored"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/check_on.svg" id="check_on"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/radio_on.svg" id="radio_on"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/check_on_disabled.svg" id="check_on_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/radio_on_disabled.svg" id="radio_on_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/toggle_off.svg" id="toggle_off"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/toggle_off_mirrored.svg" id="toggle_off_mirrored"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/toggle_off_disabled.svg" id="toggle_off_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/toggle_off_disabled_mirrored.svg" id="toggle_off_disabled_mirrored"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/check_off.svg" id="check_off"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/radio_off.svg" id="radio_off"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/check_off_disabled.svg" id="check_off_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/radio_off_disabled.svg" id="radio_off_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/grabber.svg" id="grabber"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/grabber_highlight.svg" id="grabber_highlight"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/grabber_disabled.svg" id="grabber_disabled"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/arrow_down.svg" id="arrow_down"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/arrow_right.svg" id="arrow_right"]
-[ext_resource type="Texture2D" path="res://addons/gohud/assets/scifi_light/arrow_left.svg" id="arrow_left"]
-
-[sub_resource type="StyleBox" id="btn_normal"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.968627, 0.980392, 0.988235, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-
-[sub_resource type="StyleBox" id="btn_hover"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.874509, 0.892549, 0.904313, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.027451, 0.101961, 0.14902, 0.42)
-
-[sub_resource type="StyleBox" id="btn_pressed"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.755529, 0.873412, 0.916627, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0, 0.494118, 0.662745, 0.75)
+[ext_resource type="Texture2D" uid="uid://jxd2mfneqimo" path="res://addons/gohud/assets/scifi_light/arrow_down.svg" id="arrow_down"]
+[ext_resource type="Texture2D" uid="uid://0slri5ab1lik" path="res://addons/gohud/assets/scifi_light/arrow_left.svg" id="arrow_left"]
+[ext_resource type="Texture2D" uid="uid://lpryniwa82fm" path="res://addons/gohud/assets/scifi_light/arrow_right.svg" id="arrow_right"]
+[ext_resource type="Script" uid="uid://d20xjoxp2hcch" path="res://addons/gohud/widgets/go_stylebox_bracket.gd" id="bracket"]
+[ext_resource type="Texture2D" uid="uid://c27wnielxs036" path="res://addons/gohud/assets/scifi_light/check_off.svg" id="check_off"]
+[ext_resource type="Texture2D" uid="uid://cojiijuledxt2" path="res://addons/gohud/assets/scifi_light/check_off_disabled.svg" id="check_off_disabled"]
+[ext_resource type="Texture2D" uid="uid://dlogqccmgfwow" path="res://addons/gohud/assets/scifi_light/check_on.svg" id="check_on"]
+[ext_resource type="Texture2D" uid="uid://cfgywa04s3jgj" path="res://addons/gohud/assets/scifi_light/check_on_disabled.svg" id="check_on_disabled"]
+[ext_resource type="Script" uid="uid://coeda5probbhu" path="res://addons/gohud/widgets/go_stylebox_cut.gd" id="cut"]
+[ext_resource type="Texture2D" uid="uid://dmxqmhadxlg5x" path="res://addons/gohud/assets/scifi_light/grabber.svg" id="grabber"]
+[ext_resource type="Texture2D" uid="uid://ufja4qyf6xqc" path="res://addons/gohud/assets/scifi_light/grabber_disabled.svg" id="grabber_disabled"]
+[ext_resource type="Texture2D" uid="uid://bd44i6r7a3qpc" path="res://addons/gohud/assets/scifi_light/grabber_highlight.svg" id="grabber_highlight"]
+[ext_resource type="Texture2D" uid="uid://osrlri028sxy" path="res://addons/gohud/assets/scifi_light/radio_off.svg" id="radio_off"]
+[ext_resource type="Texture2D" uid="uid://cfsc8y5q1dstw" path="res://addons/gohud/assets/scifi_light/radio_off_disabled.svg" id="radio_off_disabled"]
+[ext_resource type="Texture2D" uid="uid://ihkfni6ln5at" path="res://addons/gohud/assets/scifi_light/radio_on.svg" id="radio_on"]
+[ext_resource type="Texture2D" uid="uid://jumqcm5jxdmx" path="res://addons/gohud/assets/scifi_light/radio_on_disabled.svg" id="radio_on_disabled"]
+[ext_resource type="Texture2D" uid="uid://bfhvluy1do618" path="res://addons/gohud/assets/scifi_light/toggle_off.svg" id="toggle_off"]
+[ext_resource type="Texture2D" uid="uid://cibws1xxiiqjm" path="res://addons/gohud/assets/scifi_light/toggle_off_disabled.svg" id="toggle_off_disabled"]
+[ext_resource type="Texture2D" uid="uid://ybms3itqyc1k" path="res://addons/gohud/assets/scifi_light/toggle_off_disabled_mirrored.svg" id="toggle_off_disabled_mirrored"]
+[ext_resource type="Texture2D" uid="uid://befav1bi4uj0d" path="res://addons/gohud/assets/scifi_light/toggle_off_mirrored.svg" id="toggle_off_mirrored"]
+[ext_resource type="Texture2D" uid="uid://covminu5igc3o" path="res://addons/gohud/assets/scifi_light/toggle_on.svg" id="toggle_on"]
+[ext_resource type="Texture2D" uid="uid://5k4u4xn1itgh" path="res://addons/gohud/assets/scifi_light/toggle_on_disabled.svg" id="toggle_on_disabled"]
+[ext_resource type="Texture2D" uid="uid://jl5r1ln5h40k" path="res://addons/gohud/assets/scifi_light/toggle_on_disabled_mirrored.svg" id="toggle_on_disabled_mirrored"]
+[ext_resource type="Texture2D" uid="uid://4k5hte0xesb6" path="res://addons/gohud/assets/scifi_light/toggle_on_mirrored.svg" id="toggle_on_mirrored"]
 
 [sub_resource type="StyleBox" id="btn_disabled"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
 script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
 bg_color = Color(0.968627, 0.980392, 0.988235, 0.55)
-cut = 10.2
-cut_corners = 5
-border_width = 1
 border_color = Color(0.184314, 0.431373, 0.541176, 0.35)
+cut = 10.2
 
 [sub_resource type="StyleBox" id="btn_focus"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
 script = ExtResource("bracket")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
 color = Color(0, 0.494118, 0.662745, 1)
-arm = 12
-thickness = 2
-inset = 0
+arm = 12.0
 
-[sub_resource type="StyleBox" id="btn_focus_on_fill"]
-script = ExtResource("bracket")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-color = Color(1, 1, 1, 1)
-arm = 12
-thickness = 2
-inset = 0
-
-[sub_resource type="StyleBox" id="btn_primary"]
+[sub_resource type="StyleBox" id="btn_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
 script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0, 0.494118, 0.662745, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0, 0.494118, 0.662745, 1)
-
-[sub_resource type="StyleBox" id="btn_primary_hover"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.004941, 0.42353, 0.570275, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0, 0.494118, 0.662745, 1)
-
-[sub_resource type="StyleBox" id="btn_primary_pressed"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.006039, 0.407843, 0.549726, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0, 0.494118, 0.662745, 1)
-
-[sub_resource type="StyleBox" id="btn_primary_glow"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0, 0.494118, 0.662745, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0, 0.494118, 0.662745, 1)
-glow_color = Color(0, 0.494118, 0.662745, 0.55)
-glow_size = 7
-
-[sub_resource type="StyleBox" id="btn_primary_glow_hover"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.004941, 0.42353, 0.570275, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0, 0.494118, 0.662745, 1)
-glow_color = Color(0, 0.494118, 0.662745, 0.75)
-glow_size = 10
-
-[sub_resource type="StyleBox" id="btn_primary_glow_pressed"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.006039, 0.407843, 0.549726, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0, 0.494118, 0.662745, 1)
-
-[sub_resource type="StyleBox" id="btn_danger"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.745098, 0.168627, 0.262745, 0.12)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.745098, 0.168627, 0.262745, 0.85)
-
-[sub_resource type="StyleBox" id="btn_danger_hover"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.745098, 0.168627, 0.262745, 0.2)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.745098, 0.168627, 0.262745, 1)
-
-[sub_resource type="StyleBox" id="btn_danger_solid"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.745098, 0.168627, 0.262745, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.745098, 0.168627, 0.262745, 1)
-
-[sub_resource type="StyleBox" id="btn_danger_solid_hover"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.615922, 0.156627, 0.242275, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.745098, 0.168627, 0.262745, 1)
-
-[sub_resource type="StyleBox" id="btn_danger_solid_pressed"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.587216, 0.15396, 0.237726, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.745098, 0.168627, 0.262745, 1)
-
-[sub_resource type="StyleBox" id="btn_danger_solid_glow"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.745098, 0.168627, 0.262745, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.745098, 0.168627, 0.262745, 1)
-glow_color = Color(0.745098, 0.168627, 0.262745, 0.55)
-glow_size = 7
-
-[sub_resource type="StyleBox" id="btn_danger_solid_glow_hover"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.615922, 0.156627, 0.242275, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.745098, 0.168627, 0.262745, 1)
-glow_color = Color(0.745098, 0.168627, 0.262745, 0.75)
-glow_size = 10
-
-[sub_resource type="StyleBox" id="btn_danger_solid_glow_pressed"]
-script = ExtResource("cut")
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
-bg_color = Color(0.587216, 0.15396, 0.237726, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.745098, 0.168627, 0.262745, 1)
-
-[sub_resource type="StyleBox" id="compact_normal"]
-script = ExtResource("cut")
-content_margin_left = 10
-content_margin_top = 5
-content_margin_right = 10
-content_margin_bottom = 5
-bg_color = Color(0.784314, 0.847059, 0.886275, 0.85)
-cut = 6.8
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.55)
-
-[sub_resource type="StyleBox" id="compact_hover"]
-script = ExtResource("cut")
-content_margin_left = 10
-content_margin_top = 5
-content_margin_right = 10
-content_margin_bottom = 5
 bg_color = Color(0.874509, 0.892549, 0.904313, 1)
-cut = 6.8
-cut_corners = 5
-border_width = 1
-border_color = Color(0.027451, 0.101961, 0.14902, 0.36)
+border_color = Color(0.027451, 0.101961, 0.14902, 0.42)
+cut = 10.2
 
-[sub_resource type="StyleBox" id="icon_hover"]
+[sub_resource type="StyleBox" id="btn_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
 script = ExtResource("cut")
-bg_color = Color(0.027451, 0.101961, 0.14902, 0.1)
-cut = 6.8
-cut_corners = 5
-border_width = 0.0
+bg_color = Color(0.755529, 0.873412, 0.916627, 1)
+border_color = Color(0, 0.494118, 0.662745, 0.75)
+cut = 10.2
 
-[sub_resource type="StyleBox" id="list_normal"]
+[sub_resource type="StyleBox" id="btn_normal"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
 script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.784314, 0.847059, 0.886275, 0.55)
-cut = 6.8
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="list_hover"]
-script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.027451, 0.101961, 0.14902, 0.09)
-cut = 6.8
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.5)
-
-[sub_resource type="StyleBox" id="focus_soft"]
-script = ExtResource("bracket")
-color = Color(0, 0.494118, 0.662745, 0.85)
-arm = 9
-thickness = 1.5
-inset = 0
-
-[sub_resource type="StyleBox" id="panel"]
-script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
 bg_color = Color(0.968627, 0.980392, 0.988235, 1)
-cut = 14
-cut_corners = 5
-border_width = 1
 border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-edge_color = Color(0, 0.494118, 0.662745, 1)
-edge_width = 2
-edge_side = 1
-glow_color = Color(0, 0.52549, 0.701961, 0.154)
-glow_size = 8
-
-[sub_resource type="StyleBox" id="panel_solid"]
-script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 0
-content_margin_right = 0
-content_margin_bottom = 0
-bg_color = Color(0.968627, 0.980392, 0.988235, 1)
 cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-
-[sub_resource type="StyleBox" id="card"]
-script = ExtResource("cut")
-content_margin_left = 12
-content_margin_top = 12
-content_margin_right = 12
-content_margin_bottom = 12
-bg_color = Color(0.784314, 0.847059, 0.886275, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.6)
-edge_color = Color(0, 0.494118, 0.662745, 0.55)
-edge_width = 2
-edge_side = 1
-
-[sub_resource type="StyleBox" id="popup"]
-script = ExtResource("cut")
-content_margin_left = 12
-content_margin_top = 12
-content_margin_right = 12
-content_margin_bottom = 12
-bg_color = Color(0.946078, 0.962745, 0.974509, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-edge_color = Color(0, 0.494118, 0.662745, 1)
-edge_width = 2
-edge_side = 1
-
-[sub_resource type="StyleBox" id="menu_hover"]
-script = ExtResource("cut")
-content_margin_left = 12
-content_margin_top = 6
-content_margin_right = 12
-content_margin_bottom = 6
-bg_color = Color(0, 0.494118, 0.662745, 0.16)
-cut = 6.8
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="menu_separator"]
-script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 8
-content_margin_right = 0
-content_margin_bottom = 8
-bg_color = Color(0.184314, 0.431373, 0.541176, 0.7)
-cut = 0
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="hud"]
-script = ExtResource("cut")
-content_margin_left = 8
-content_margin_top = 8
-content_margin_right = 8
-content_margin_bottom = 8
-bg_color = Color(0.968627, 0.980392, 0.988235, 0.92)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.8)
-edge_color = Color(0, 0.494118, 0.662745, 1)
-edge_width = 2
-edge_side = 1
-glow_color = Color(0, 0.494118, 0.662745, 0.3)
-glow_size = 6
-
-[sub_resource type="StyleBox" id="notice"]
-script = ExtResource("cut")
-content_margin_left = 12
-content_margin_top = 12
-content_margin_right = 12
-content_margin_bottom = 12
-bg_color = Color(0.955098, 0.969804, 0.98, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-edge_color = Color(0, 0.494118, 0.662745, 1)
-edge_width = 2
-edge_side = 1
-glow_color = Color(0, 0.494118, 0.662745, 0.3)
-glow_size = 6
 
 [sub_resource type="StyleBoxEmpty" id="empty"]
 
-[sub_resource type="StyleBox" id="edit_normal"]
-script = ExtResource("cut")
-content_margin_left = 12
-content_margin_top = 8
-content_margin_right = 12
-content_margin_bottom = 8
-bg_color = Color(0.878431, 0.909804, 0.933333, 0.65)
-cut = 6.8
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-
-[sub_resource type="StyleBox" id="edit_focus"]
-script = ExtResource("cut")
-content_margin_left = 12
-content_margin_top = 8
-content_margin_right = 12
-content_margin_bottom = 8
-bg_color = Color(0.878431, 0.909804, 0.933333, 0.85)
-cut = 6.8
-cut_corners = 5
-border_width = 2
-border_color = Color(0, 0.494118, 0.662745, 1)
-
-[sub_resource type="StyleBox" id="scroll_track"]
-script = ExtResource("cut")
-content_margin_left = 3
-content_margin_top = 3
-content_margin_right = 3
-content_margin_bottom = 3
-bg_color = Color(0.228858, 0.32367, 0.372711, 0.14)
-cut = 2.55
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="scroll_grab"]
-script = ExtResource("cut")
-content_margin_left = 3
-content_margin_top = 3
-content_margin_right = 3
-content_margin_bottom = 3
-bg_color = Color(0.168746, 0.330156, 0.410862, 0.5)
-cut = 2.55
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="scroll_grab_hover"]
-script = ExtResource("cut")
-content_margin_left = 3
-content_margin_top = 3
-content_margin_right = 3
-content_margin_bottom = 3
-bg_color = Color(0.168746, 0.330156, 0.410862, 0.8)
-cut = 2.55
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="slider_track"]
-script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 3
-content_margin_right = 0
-content_margin_bottom = 3
-bg_color = Color(0.776471, 0.839216, 0.87451, 0.9)
-cut = 2.55
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="slider_grab"]
-script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 3
-content_margin_right = 0
-content_margin_bottom = 3
-bg_color = Color(0, 0.494118, 0.662745, 0.55)
-cut = 2.55
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="slider_grab_hover"]
-script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 3
-content_margin_right = 0
-content_margin_bottom = 3
-bg_color = Color(0, 0.494118, 0.662745, 1)
-cut = 2.55
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="bar_bg"]
-script = ExtResource("cut")
-bg_color = Color(0.776471, 0.839216, 0.87451, 0.85)
-cut = 6.8
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.65)
-
-[sub_resource type="StyleBox" id="bar_fill"]
-script = ExtResource("cut")
-bg_color = Color(0, 0.494118, 0.662745, 1)
-cut = 6.8
-cut_corners = 5
-border_width = 0.0
-glow_color = Color(0, 0.494118, 0.662745, 0.5)
-glow_size = 4
-
-[sub_resource type="StyleBox" id="separator"]
-script = ExtResource("cut")
-content_margin_left = 0
-content_margin_top = 0.5
-content_margin_right = 0
-content_margin_bottom = 0.5
-bg_color = Color(0.184314, 0.431373, 0.541176, 0.8)
-cut = 0
-cut_corners = 5
-border_width = 0.0
-
-[sub_resource type="StyleBox" id="tooltip"]
-script = ExtResource("cut")
-content_margin_left = 10
-content_margin_top = 6
-content_margin_right = 10
-content_margin_bottom = 6
-bg_color = Color(0.937058, 0.955686, 0.969019, 1)
-cut = 6.8
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-
-[sub_resource type="StyleBox" id="fold_title"]
-script = ExtResource("cut")
-content_margin_left = 14
-content_margin_top = 13
-content_margin_right = 14
-content_margin_bottom = 13
-bg_color = Color(0.784314, 0.847059, 0.886275, 1)
-cut = 10.2
-cut_corners = 3
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.6)
-
-[sub_resource type="StyleBox" id="fold_title_hover"]
-script = ExtResource("cut")
-content_margin_left = 14
-content_margin_top = 13
-content_margin_right = 14
-content_margin_bottom = 13
-bg_color = Color(0.874509, 0.892549, 0.904313, 1)
-cut = 10.2
-cut_corners = 3
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.95)
-
-[sub_resource type="StyleBox" id="fold_title_collapsed"]
-script = ExtResource("cut")
-content_margin_left = 14
-content_margin_top = 13
-content_margin_right = 14
-content_margin_bottom = 13
-bg_color = Color(0.784314, 0.847059, 0.886275, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.6)
-
-[sub_resource type="StyleBox" id="fold_title_collapsed_hover"]
-script = ExtResource("cut")
-content_margin_left = 14
-content_margin_top = 13
-content_margin_right = 14
-content_margin_bottom = 13
-bg_color = Color(0.874509, 0.892549, 0.904313, 1)
-cut = 10.2
-cut_corners = 5
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.95)
+[sub_resource type="StyleBox" id="focus_soft"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("bracket")
+color = Color(0, 0.494118, 0.662745, 0.85)
+arm = 9.0
+thickness = 1.5
 
 [sub_resource type="StyleBox" id="fold_panel"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
 script = ExtResource("cut")
-content_margin_left = 14
-content_margin_top = 10
-content_margin_right = 14
-content_margin_bottom = 14
 bg_color = Color(0.784314, 0.847059, 0.886275, 0.5)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.6)
 cut = 10.2
 cut_corners = 12
-border_width = 1
-border_color = Color(0.184314, 0.431373, 0.541176, 0.6)
 
-[sub_resource type="StyleBox" id="tab_selected"]
+[sub_resource type="StyleBox" id="fold_title_collapsed_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 13.0
+content_margin_right = 14.0
+content_margin_bottom = 13.0
 script = ExtResource("cut")
-content_margin_left = 20
-content_margin_top = 8
-content_margin_right = 20
-content_margin_bottom = 8
-bg_color = Color(0.682353, 0.784314, 0.847059, 1)
-cut = 6.8
+bg_color = Color(0.874509, 0.892549, 0.904313, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.95)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="fold_title_collapsed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 13.0
+content_margin_right = 14.0
+content_margin_bottom = 13.0
+script = ExtResource("cut")
+bg_color = Color(0.784314, 0.847059, 0.886275, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.6)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="fold_title_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 13.0
+content_margin_right = 14.0
+content_margin_bottom = 13.0
+script = ExtResource("cut")
+bg_color = Color(0.874509, 0.892549, 0.904313, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.95)
+cut = 10.2
 cut_corners = 3
-border_width = 0.0
+
+[sub_resource type="StyleBox" id="fold_title"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 14.0
+content_margin_top = 13.0
+content_margin_right = 14.0
+content_margin_bottom = 13.0
+script = ExtResource("cut")
+bg_color = Color(0.784314, 0.847059, 0.886275, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.6)
+cut = 10.2
+cut_corners = 3
+
+[sub_resource type="StyleBox" id="card"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+script = ExtResource("cut")
+bg_color = Color(0.784314, 0.847059, 0.886275, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.6)
+cut = 10.2
+edge_color = Color(0, 0.494118, 0.662745, 0.55)
+
+[sub_resource type="StyleBox" id="compact_normal"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+script = ExtResource("cut")
+bg_color = Color(0.784314, 0.847059, 0.886275, 0.85)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.55)
+cut = 6.8
+
+[sub_resource type="StyleBox" id="compact_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+script = ExtResource("cut")
+bg_color = Color(0.874509, 0.892549, 0.904313, 1)
+border_color = Color(0.027451, 0.101961, 0.14902, 0.36)
+cut = 6.8
+
+[sub_resource type="StyleBox" id="btn_danger_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.745098, 0.168627, 0.262745, 0.2)
+border_color = Color(0.745098, 0.168627, 0.262745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_danger"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.745098, 0.168627, 0.262745, 0.12)
+border_color = Color(0.745098, 0.168627, 0.262745, 0.85)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_focus_on_fill"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("bracket")
+color = Color(1, 1, 1, 1)
+arm = 12.0
+
+[sub_resource type="StyleBox" id="btn_danger_solid_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.615922, 0.156627, 0.242275, 1)
+border_color = Color(0.745098, 0.168627, 0.262745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_danger_solid_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.587216, 0.15396, 0.237726, 1)
+border_color = Color(0.745098, 0.168627, 0.262745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_danger_solid"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.745098, 0.168627, 0.262745, 1)
+border_color = Color(0.745098, 0.168627, 0.262745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_danger_solid_glow_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.615922, 0.156627, 0.242275, 1)
+border_color = Color(0.745098, 0.168627, 0.262745, 1)
+cut = 10.2
+glow_color = Color(0.745098, 0.168627, 0.262745, 0.75)
+glow_size = 10.0
+
+[sub_resource type="StyleBox" id="btn_danger_solid_glow_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.587216, 0.15396, 0.237726, 1)
+border_color = Color(0.745098, 0.168627, 0.262745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_danger_solid_glow"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.745098, 0.168627, 0.262745, 1)
+border_color = Color(0.745098, 0.168627, 0.262745, 1)
+cut = 10.2
+glow_color = Color(0.745098, 0.168627, 0.262745, 0.55)
+glow_size = 7.0
+
+[sub_resource type="StyleBox" id="hud"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+script = ExtResource("cut")
+bg_color = Color(0.968627, 0.980392, 0.988235, 0.92)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.8)
+cut = 10.2
 edge_color = Color(0, 0.494118, 0.662745, 1)
-edge_width = 2
-edge_side = 3
-glow_color = Color(0, 0.494118, 0.662745, 0.35)
-glow_size = 5
+glow_color = Color(0, 0.494118, 0.662745, 0.3)
+glow_size = 6.0
+
+[sub_resource type="StyleBox" id="notice"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+script = ExtResource("cut")
+bg_color = Color(0.955098, 0.969804, 0.98, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
+cut = 10.2
+edge_color = Color(0, 0.494118, 0.662745, 1)
+glow_color = Color(0, 0.494118, 0.662745, 0.3)
+glow_size = 6.0
+
+[sub_resource type="StyleBox" id="panel"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("cut")
+bg_color = Color(0.968627, 0.980392, 0.988235, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
+cut = 14.0
+edge_color = Color(0, 0.494118, 0.662745, 1)
+glow_color = Color(0, 0.52549, 0.701961, 0.154)
+glow_size = 8.0
+
+[sub_resource type="StyleBox" id="popup"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+script = ExtResource("cut")
+bg_color = Color(0.946078, 0.962745, 0.974509, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
+cut = 10.2
+edge_color = Color(0, 0.494118, 0.662745, 1)
+
+[sub_resource type="StyleBox" id="icon_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("cut")
+bg_color = Color(0.027451, 0.101961, 0.14902, 0.1)
+border_width = 0.0
+cut = 6.8
+
+[sub_resource type="StyleBox" id="list_normal"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("cut")
+bg_color = Color(0.784314, 0.847059, 0.886275, 0.55)
+border_width = 0.0
+cut = 6.8
+
+[sub_resource type="StyleBox" id="list_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("cut")
+bg_color = Color(0.027451, 0.101961, 0.14902, 0.09)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.5)
+cut = 6.8
+
+[sub_resource type="StyleBox" id="btn_primary_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.004941, 0.42353, 0.570275, 1)
+border_color = Color(0, 0.494118, 0.662745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_primary_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.006039, 0.407843, 0.549726, 1)
+border_color = Color(0, 0.494118, 0.662745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_primary"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0, 0.494118, 0.662745, 1)
+border_color = Color(0, 0.494118, 0.662745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_primary_glow_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.004941, 0.42353, 0.570275, 1)
+border_color = Color(0, 0.494118, 0.662745, 1)
+cut = 10.2
+glow_color = Color(0, 0.494118, 0.662745, 0.75)
+glow_size = 10.0
+
+[sub_resource type="StyleBox" id="btn_primary_glow_pressed"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0.006039, 0.407843, 0.549726, 1)
+border_color = Color(0, 0.494118, 0.662745, 1)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="btn_primary_glow"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+script = ExtResource("cut")
+bg_color = Color(0, 0.494118, 0.662745, 1)
+border_color = Color(0, 0.494118, 0.662745, 1)
+cut = 10.2
+glow_color = Color(0, 0.494118, 0.662745, 0.55)
+glow_size = 7.0
+
+[sub_resource type="StyleBox" id="scroll_grab"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("cut")
+bg_color = Color(0.168746, 0.330156, 0.410862, 0.5)
+border_width = 0.0
+cut = 2.55
+
+[sub_resource type="StyleBox" id="scroll_grab_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("cut")
+bg_color = Color(0.168746, 0.330156, 0.410862, 0.8)
+border_width = 0.0
+cut = 2.55
+
+[sub_resource type="StyleBox" id="scroll_track"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("cut")
+bg_color = Color(0.228858, 0.32367, 0.372711, 0.14)
+border_width = 0.0
+cut = 2.55
+
+[sub_resource type="StyleBox" id="separator"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.5
+content_margin_right = 0.0
+content_margin_bottom = 0.5
+script = ExtResource("cut")
+bg_color = Color(0.184314, 0.431373, 0.541176, 0.8)
+border_width = 0.0
+cut = 0.0
+
+[sub_resource type="StyleBox" id="slider_grab"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 3.0
+script = ExtResource("cut")
+bg_color = Color(0, 0.494118, 0.662745, 0.55)
+border_width = 0.0
+cut = 2.55
+
+[sub_resource type="StyleBox" id="slider_grab_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 3.0
+script = ExtResource("cut")
+bg_color = Color(0, 0.494118, 0.662745, 1)
+border_width = 0.0
+cut = 2.55
+
+[sub_resource type="StyleBox" id="slider_track"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 3.0
+script = ExtResource("cut")
+bg_color = Color(0.776471, 0.839216, 0.87451, 0.9)
+border_width = 0.0
+cut = 2.55
+
+[sub_resource type="StyleBox" id="edit_focus"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+script = ExtResource("cut")
+bg_color = Color(0.878431, 0.909804, 0.933333, 0.85)
+border_color = Color(0, 0.494118, 0.662745, 1)
+border_width = 2.0
+cut = 6.8
+
+[sub_resource type="StyleBox" id="edit_normal"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+script = ExtResource("cut")
+bg_color = Color(0.878431, 0.909804, 0.933333, 0.65)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
+cut = 6.8
+
+[sub_resource type="StyleBox" id="panel_solid"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+script = ExtResource("cut")
+bg_color = Color(0.968627, 0.980392, 0.988235, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
+cut = 10.2
+
+[sub_resource type="StyleBox" id="menu_hover"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+script = ExtResource("cut")
+bg_color = Color(0, 0.494118, 0.662745, 0.16)
+border_width = 0.0
+cut = 6.8
+
+[sub_resource type="StyleBox" id="menu_separator"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 0.0
+content_margin_top = 8.0
+content_margin_right = 0.0
+content_margin_bottom = 8.0
+script = ExtResource("cut")
+bg_color = Color(0.184314, 0.431373, 0.541176, 0.7)
+border_width = 0.0
+cut = 0.0
+
+[sub_resource type="StyleBox" id="bar_bg"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("cut")
+bg_color = Color(0.776471, 0.839216, 0.87451, 0.85)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.65)
+cut = 6.8
+
+[sub_resource type="StyleBox" id="bar_fill"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("cut")
+bg_color = Color(0, 0.494118, 0.662745, 1)
+border_width = 0.0
+cut = 6.8
+glow_color = Color(0, 0.494118, 0.662745, 0.5)
+glow_size = 4.0
 
 [sub_resource type="StyleBox" id="tab_unselected"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
 script = ExtResource("cut")
-content_margin_left = 20
-content_margin_top = 8
-content_margin_right = 20
-content_margin_bottom = 8
 draw_center = false
-cut = 0
-cut_corners = 5
 border_width = 0.0
+cut = 0.0
 edge_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-edge_width = 1
+edge_width = 1.0
 edge_side = 3
 
 [sub_resource type="StyleBox" id="tab_hovered"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
 script = ExtResource("cut")
-content_margin_left = 20
-content_margin_top = 8
-content_margin_right = 20
-content_margin_bottom = 8
 bg_color = Color(0.784314, 0.847059, 0.886275, 1)
+border_width = 0.0
 cut = 6.8
 cut_corners = 3
-border_width = 0.0
 edge_color = Color(0.184314, 0.431373, 0.541176, 0.9)
-edge_width = 1
+edge_width = 1.0
 edge_side = 3
 
+[sub_resource type="StyleBox" id="tab_selected"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+script = ExtResource("cut")
+bg_color = Color(0.682353, 0.784314, 0.847059, 1)
+border_width = 0.0
+cut = 6.8
+cut_corners = 3
+edge_color = Color(0, 0.494118, 0.662745, 1)
+edge_side = 3
+glow_color = Color(0, 0.494118, 0.662745, 0.35)
+glow_size = 5.0
+
+[sub_resource type="StyleBox" id="tooltip"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
+script = ExtResource("cut")
+bg_color = Color(0.937058, 0.955686, 0.969019, 1)
+border_color = Color(0.184314, 0.431373, 0.541176, 0.9)
+cut = 6.8
+
 [resource]
+default_font_size = 16
 BoxContainer/constants/separation = 12
 Button/colors/font_color = Color(0.027451, 0.101961, 0.14902, 1)
 Button/colors/font_disabled_color = Color(0.228858, 0.32367, 0.372711, 1)
@@ -1057,4 +1085,3 @@ VSlider/icons/grabber_highlight = ExtResource("grabber_highlight")
 VSlider/styles/grabber_area = SubResource("slider_grab")
 VSlider/styles/grabber_area_highlight = SubResource("slider_grab_hover")
 VSlider/styles/slider = SubResource("slider_track")
-default_font_size = 16
