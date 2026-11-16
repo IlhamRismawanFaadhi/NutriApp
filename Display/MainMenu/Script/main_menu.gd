@@ -115,7 +115,7 @@ var meals: int
 @onready var protein_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi1/Protein/ProteinValue
 @onready var carbo_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi2/Carbo/CarboValue
 @onready var fat_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi2/Fat/FatValue
-@onready var water_value_spin_box: SpinBox = $VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi3/Water/WaterValue
+
 ## === Chat === ##
 # Using log today
 @onready var calorie_label_value: Label = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/LogProgressToday/VBoxContainer/HBoxContainer/Kcal/VBoxContainer/Value
@@ -130,15 +130,17 @@ var meals: int
 # Texting
 @onready var text_writing: TextEdit = $VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/TextWrite/TextWriting
 
-## === Chat === ##
+## === Profile === ##
 # Nutrition Target
-@onready var calories_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer/CaloriesTarget
-@onready var protein_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer2/ProteinTarget
-@onready var carbo_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer/CarbsTarget
-@onready var fat_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer2/FatTarget
-@onready var water_target_spin_box: SpinBox = $VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded3/VBoxContainer/WaterTarget
+@onready var calories_target_spin_box: SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded2/VBoxContainer/CaloriesTarget"
+@onready var protein_target_spin_box: SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded2/VBoxContainer2/ProteinTarget"
+@onready var carbo_target_spin_box: SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded/VBoxContainer/CarbsTarget"
+@onready var fat_target_spin_box: SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded/VBoxContainer2/FatTarget"
+@onready var water_target_spin_box: SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded3/VBoxContainer/WaterTarget"
 func _ready() -> void:
+	set_maximum_target()
 	chage_display_by_index(0)
+	food_or_drink_reset()
 func chage_display_by_index(index: int)->void:
 	pass
 	if index <= %Display.get_child_count():
@@ -155,14 +157,17 @@ func _on_home_pressed() -> void:
 	chage_display_by_index(0)
 	pass # Replace with function body.
 
+func _on_reset_hydration_pressed() -> void:
+	water = water_progress_bar.min_value
+	drink_amout_spin_box.value = 0
 func _on_auto_add_hydration_250_pressed() -> void:
-	pass # Replace with function body.
+	water += 250
 
 func _on_auto_ad_hydrationd_500_pressed() -> void:
-	pass # Replace with function body.
+	water += 500
 
 func _on_add_drink_amount_pressed() -> void:
-	pass # Replace with function body.
+	water += drink_amout_spin_box.value
 
 ## === page Suggested function === ##
 func _on_suggested_pressed() -> void:
@@ -173,14 +178,46 @@ func _on_suggested_pressed() -> void:
 func _on_scan_pressed() -> void:
 	chage_display_by_index(2)
 	pass # Replace with function body.
+func food_or_drink_reset()->void:
+	food_name_line_edit.text = str("_")
+	eating_time_spin_box.value = 0
+	calorie_value_spin_box.value = 0
+	protein_value_spin_box.value = 0
+	carbo_value_spin_box.value = 0
+	fat_value_spin_box.value = 0
+	
 func food_or_drink_assign() ->void:
 	calories += calorie_value_spin_box.value
 	protein += protein_value_spin_box.value
 	carbo += carbo_value_spin_box.value
 	fat+= fat_value_spin_box.value
-	water += water_value_spin_box.value
+func _on_breakfast_pressed() -> void:
+	breakfast_button.disabled = true
+	launch_button.disabled = false
+	dinner_button.disabled = false
+	snack_button.disabled = false
+
+func _on_launch_pressed() -> void:
+	breakfast_button.disabled = false
+	launch_button.disabled = true
+	dinner_button.disabled = false
+	snack_button.disabled = false
+
+func _on_dinner_pressed() -> void:
+	breakfast_button.disabled = false
+	launch_button.disabled = false
+	dinner_button.disabled = true
+	snack_button.disabled = false
+
+func _on_snack_pressed() -> void:
+	breakfast_button.disabled = false
+	launch_button.disabled = false
+	dinner_button.disabled = false
+	snack_button.disabled = true
+
 func _on_add_to_today_pressed() -> void:
 	food_or_drink_assign()
+	food_or_drink_reset()
 
 ## === page Chat function === ##
 func _on_ai_chat_pressed() -> void:
@@ -204,15 +241,15 @@ func _on_profile_pressed() -> void:
 	chage_display_by_index(4)
 	pass # Replace with function body.
 
-func _on_reset_hydration_pressed() -> void:
-	pass # Replace with function body.
 
-func _on_set_target_pressed() -> void:
+func set_maximum_target() ->void:
 	maximum_calories = calories_target_spin_box.value
 	maximum_carbo = carbo_target_spin_box.value
 	maximum_fat = fat_target_spin_box.value
 	maximum_protein = protein_target_spin_box.value
-	maximum_water = water_target_spin_box.value
-	
+	maximum_water = water_target_spin_box.value * 1000
+
+func _on_set_target_pressed() -> void:
+	set_maximum_target()
 func _on_log_out_pressed() -> void:
 	pass # Replace with function body.

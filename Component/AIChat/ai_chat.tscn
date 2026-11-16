@@ -19,13 +19,13 @@ size_flags_horizontal = 3
 [node name="TypeFood" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=505658738]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Dinner"
+text = "NutriAI"
 label_settings = SubResource("LabelSettings_bht10")
 
 [node name="Label2" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=647181402]
 layout_mode = 2
 size_flags_vertical = 3
-text = "dwdd wdw ddd dwd wdww wwwww wwwwww dwdwdw"
+text = "Hello, what i can for help you?"
 fit_content = true
 autowrap_mode = 2
 

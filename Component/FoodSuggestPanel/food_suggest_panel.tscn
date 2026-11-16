@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4qmwpkrkhpb4"]
 
 [ext_resource type="Texture2D" uid="uid://cw2plgnuyavts" path="res://Asset/Image/NasiGoreng.jpg" id="1_km2r4"]
+[ext_resource type="Script" uid="uid://dunijsifjyq53" path="res://Component/FoodSuggestPanel/Script/food_suggest_panel.gd" id="1_xu600"]
 [ext_resource type="FontFile" uid="uid://drhtif4f5mw2" path="res://Asset/Font/Ubuntu/Ubuntu-Regular.ttf" id="2_xu600"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km2r4"]
@@ -44,21 +45,24 @@ font_color = Color(0.10690612, 0.10970887, 0.10116223, 1)
 
 [node name="FoodSuggestPanel" type="PanelContainer" unique_id=960954013]
 custom_minimum_size = Vector2(0, 84.945)
+offset_right = 258.0
+offset_bottom = 86.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_km2r4")
+script = ExtResource("1_xu600")
 
 [node name="Container" type="HBoxContainer" parent="." unique_id=146230525]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
 
 [node name="VSeparator2" type="VSeparator" parent="Container" unique_id=33346252]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 3.3
+size_flags_stretch_ratio = 0.0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_km2r4")
 
 [node name="FoodTexture" type="TextureRect" parent="Container" unique_id=2003323562]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 18.8
 texture = ExtResource("1_km2r4")
 expand_mode = 1
 stretch_mode = 5
@@ -66,6 +70,7 @@ stretch_mode = 5
 [node name="Information" type="VBoxContainer" parent="Container" unique_id=1238139304]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="HSeparator2" type="HSeparator" parent="Container/Information" unique_id=760669640]
 layout_mode = 2
@@ -82,12 +87,15 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Nasi Goreng"
 label_settings = SubResource("LabelSettings_6fhyq")
+clip_text = true
 
 [node name="Composition" type="Label" parent="Container/Information" unique_id=1593766797]
 layout_mode = 2
 size_flags_vertical = 1
-text = "30g protein - 58g carb - 12g fat"
+text = "30g protein 
+58g carb - 12g fat"
 label_settings = SubResource("LabelSettings_jfoer")
+clip_text = true
 
 [node name="HSeparator" type="HSeparator" parent="Container/Information" unique_id=695758897]
 layout_mode = 2
@@ -105,5 +113,9 @@ text = "Kcal 400"
 [node name="VSeparator" type="VSeparator" parent="Container" unique_id=1312123707]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 3.3
+size_flags_stretch_ratio = 0.0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_6mq66")
+
+[node name="SelectButton" type="Button" parent="." unique_id=1331073651]
+layout_mode = 2
+flat = true

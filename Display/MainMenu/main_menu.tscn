@@ -225,6 +225,8 @@ font = SubResource("FontVariation_j72xx")
 font_size = 18
 font_color = Color(0.95070344, 0.9507033, 0.9507033, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlseb"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ygr"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -1251,7 +1253,7 @@ size_flags_vertical = 3
 text = "Item Name"
 label_settings = SubResource("LabelSettings_0hlvs")
 
-[node name="FoodName" type="LineEdit" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/ItemName" unique_id=561320367]
+[node name="FoodName" type="LineEdit" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/ItemName" unique_id=228108148]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.25
@@ -1376,6 +1378,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 4.25
 
 [node name="InformasiGizi3" type="HBoxContainer" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer" unique_id=1483092711]
+visible = false
 layout_mode = 2
 
 [node name="Water" type="VBoxContainer" parent="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/InformasiGizi3" unique_id=695472707]
@@ -1697,139 +1700,151 @@ label_settings = SubResource("LabelSettings_dp3cm")
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_y86a1")
 
-[node name="Hydration" type="PanelContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=1345528380]
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer" unique_id=1676925776]
+layout_mode = 2
+current_tab = 1
+
+[node name="Calculate BMI" type="PanelContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer" unique_id=153911665]
+visible = false
 custom_minimum_size = Vector2(0, 197.8)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_3xd07")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jlseb")
+metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration" unique_id=1712128029]
+[node name="Manual Added" type="PanelContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer" unique_id=1345528380]
+custom_minimum_size = Vector2(0, 197.8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jlseb")
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added" unique_id=1712128029]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=73176046]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=73176046]
 layout_mode = 2
 size_flags_vertical = 6
 text = "Nutrition Target"
 label_settings = ExtResource("4_n8jl1")
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=123337162]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=123337162]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.4
 theme_override_styles/separator = SubResource("StyleBoxLine_3xd07")
 
-[node name="Status" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=507669554]
+[node name="Status" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=507669554]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="ResetHydration" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/Status" unique_id=1490406523]
+[node name="ResetHydration" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/Status" unique_id=1490406523]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset"
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=305577828]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=305577828]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jq8tk")
 
-[node name="ManualAdded2" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=130867864]
+[node name="ManualAdded2" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=130867864]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2" unique_id=477933417]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded2" unique_id=477933417]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer" unique_id=1955719624]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded2/VBoxContainer" unique_id=1955719624]
 layout_mode = 2
 text = "Calories (kcal)"
 label_settings = SubResource("LabelSettings_yygku")
 vertical_alignment = 1
 
-[node name="CaloriesTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer" unique_id=116636111]
+[node name="CaloriesTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded2/VBoxContainer" unique_id=116636111]
 layout_mode = 2
 min_value = 1.0
 max_value = 10000.0
-value = 1.0
+value = 220.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2" unique_id=1688441000]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded2" unique_id=1688441000]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer2" unique_id=672866084]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded2/VBoxContainer2" unique_id=672866084]
 layout_mode = 2
 text = "Protein (g)"
 label_settings = SubResource("LabelSettings_yygku")
 vertical_alignment = 1
 
-[node name="ProteinTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded2/VBoxContainer2" unique_id=1524650158]
+[node name="ProteinTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded2/VBoxContainer2" unique_id=1524650158]
 layout_mode = 2
 min_value = 1.0
 max_value = 10000.0
-value = 32.0
+value = 140.0
 
-[node name="ManualAdded" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1988849245]
+[node name="ManualAdded" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=1988849245]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded" unique_id=967812711]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded" unique_id=967812711]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer" unique_id=1483176639]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded/VBoxContainer" unique_id=1483176639]
 layout_mode = 2
 text = "Carbs (g)"
 label_settings = SubResource("LabelSettings_yygku")
 vertical_alignment = 1
 
-[node name="CarbsTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer" unique_id=265884915]
+[node name="CarbsTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded/VBoxContainer" unique_id=265884915]
 layout_mode = 2
 min_value = 1.0
 max_value = 10000.0
-value = 1.0
+value = 250.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded" unique_id=520884193]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded" unique_id=520884193]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer2" unique_id=2037531967]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded/VBoxContainer2" unique_id=2037531967]
 layout_mode = 2
 text = "Fat (g)"
 label_settings = SubResource("LabelSettings_yygku")
 vertical_alignment = 1
 
-[node name="FatTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/VBoxContainer2" unique_id=108572060]
+[node name="FatTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded/VBoxContainer2" unique_id=108572060]
 layout_mode = 2
 min_value = 1.0
 max_value = 10000.0
-value = 1.0
+value = 70.0
 
-[node name="ManualAdded3" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1829399845]
+[node name="ManualAdded3" type="HBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=1829399845]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded3" unique_id=494897364]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded3" unique_id=494897364]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded3/VBoxContainer" unique_id=1993908906]
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded3/VBoxContainer" unique_id=1993908906]
 layout_mode = 2
 text = "Water (L)"
 label_settings = SubResource("LabelSettings_yygku")
 vertical_alignment = 1
 
-[node name="WaterTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded3/VBoxContainer" unique_id=362755532]
+[node name="WaterTarget" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/ManualAdded3/VBoxContainer" unique_id=362755532]
 layout_mode = 2
 min_value = 1.0
 max_value = 10000.0
-value = 1.0
+value = 3.0
 
-[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=1577443774]
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=1577443774]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jq8tk")
 
-[node name="SetTarget" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer" unique_id=2086983836]
+[node name="SetTarget" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer" unique_id=2086983836]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Set Target"
@@ -1918,12 +1933,16 @@ expand_icon = true
 [connection signal="pressed" from="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/AutoAdde/AutoAdHydrationd500" to="." method="_on_auto_ad_hydrationd_500_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/ManualAdded/AddDrinkAmount" to="." method="_on_add_drink_amount_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/AddToToday" to="." method="_on_add_to_today_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/Type/HBoxContainer/Breakfast" to="." method="_on_breakfast_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/Type/HBoxContainer/Launch" to="." method="_on_launch_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/Type/HBoxContainer2/Dinner" to="." method="_on_dinner_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Scan/HBoxContainer/VBoxContainer/FoodOrDrink/Title/ScrollContainer/VBoxContainer/Type/HBoxContainer2/Snack" to="." method="_on_snack_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/ScrollContainer/Suggest/SuggestButton1" to="." method="_on_suggest_button_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/ScrollContainer/Suggest/SuggestButton2" to="." method="_on_suggest_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/ScrollContainer/Suggest/SuggestButton3" to="." method="_on_suggest_button_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/AiChat/HBoxContainer/VBoxContainer/Texting/VBoxContainer/TextWrite/SendText" to="." method="_on_send_text_pressed"]
-[connection signal="pressed" from="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/Status/ResetHydration" to="." method="_on_reset_hydration_pressed"]
-[connection signal="pressed" from="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/Hydration/VBoxContainer/SetTarget" to="." method="_on_set_target_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/Status/ResetHydration" to="." method="_on_reset_hydration_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Manual Added/VBoxContainer/SetTarget" to="." method="_on_set_target_pressed"]
 [connection signal="pressed" from="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/LogOut" to="." method="_on_log_out_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Menu/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Menu/Suggested" to="." method="_on_suggested_pressed"]
