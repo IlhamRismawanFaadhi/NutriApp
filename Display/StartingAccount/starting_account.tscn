@@ -1,0 +1,396 @@
+[gd_scene format=3 uid="uid://v18xtu3o30q4"]
+
+[ext_resource type="Theme" uid="uid://bjn2g4jdcu67v" path="res://addons/gohud/themes/gohud_dark.tres" id="1_e0vkk"]
+[ext_resource type="Texture2D" uid="uid://72rnbggs7qri" path="res://addons/gohud/icons/default/home.svg" id="2_0lox0"]
+[ext_resource type="Script" uid="uid://hi8hjv6t4kat" path="res://Display/StartingAccount/Script/starting_account.gd" id="2_du204"]
+[ext_resource type="LabelSettings" uid="uid://04lir5pak1w" path="res://Saves/Theme/Judul.tres" id="3_du204"]
+[ext_resource type="LabelSettings" uid="uid://dct18ypb7db1l" path="res://Saves/Theme/SubJudul.tres" id="4_v6yy5"]
+[ext_resource type="FontFile" uid="uid://drhtif4f5mw2" path="res://Asset/Font/Ubuntu/Ubuntu-Regular.ttf" id="5_uu7tj"]
+[ext_resource type="Texture2D" uid="uid://bgvifjhrqjii7" path="res://addons/gohud/icons/library/pencil.svg" id="6_0lox0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gul1j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3fys"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.321606, 0.385234, 0.48114, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tssii"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(5.968213e-06, 0.67488086, 0.19181466, 1)
+border_color = Color(0.321606, 0.385234, 0.48114, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ruedu"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+color = Color(0, 0, 0, 0)
+grow_begin = 16.0
+grow_end = 29.0
+thickness = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3nlvr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y54a3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbohu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 10.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.15294118)
+shadow_size = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_j1e2f"]
+color = Color(0.33809972, 0.3380997, 0.33809966, 1)
+thickness = 2
+
+[sub_resource type="FontVariation" id="FontVariation_7mdeo"]
+base_font = ExtResource("5_uu7tj")
+variation_embolden = 0.4
+
+[sub_resource type="LabelSettings" id="LabelSettings_sujoi"]
+font = SubResource("FontVariation_7mdeo")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_77i40"]
+base_font = ExtResource("5_uu7tj")
+variation_embolden = 0.4
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5rml"]
+font = SubResource("FontVariation_77i40")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8gvxs"]
+
+[node name="StartingAccount" type="Control" unique_id=1688321715]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_e0vkk")
+script = ExtResource("2_du204")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=121631225]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1855386252]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.014
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.18400002
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Display" type="Control" parent="VBoxContainer" unique_id=475457007]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.85
+
+[node name="CreateProfile" type="Control" parent="VBoxContainer/Display" unique_id=1071503708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/CreateProfile" unique_id=255583076]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Display/CreateProfile/HBoxContainer" unique_id=1849161989]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gul1j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer" unique_id=775085620]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 293.45
+offset_transform_enabled = true
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer" unique_id=53829322]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u3fys")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/PanelContainer" unique_id=352202803]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1532537649]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssii")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/PanelContainer/HBoxContainer/Panel" unique_id=1156558780]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_0lox0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1951639836]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.25
+text = "Create Profile"
+label_settings = ExtResource("3_du204")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer" unique_id=1426986820]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_ruedu")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer" unique_id=1748405351]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=513558035]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1841151415]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3nlvr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1177030035]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 42.1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1994232463]
+custom_minimum_size = Vector2(0, -2.775)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_y54a3")
+
+[node name="Progress" type="PanelContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=536692172]
+custom_minimum_size = Vector2(0, 510.705)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vbohu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress" unique_id=565718751]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=1202552705]
+layout_mode = 2
+text = "Progress"
+label_settings = ExtResource("4_v6yy5")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=593410470]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_j1e2f")
+
+[node name="Name" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=965564341]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Name" unique_id=513520826]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_sujoi")
+vertical_alignment = 1
+
+[node name="NameInput" type="TextEdit" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Name" unique_id=1916377013]
+custom_minimum_size = Vector2(0, 51.42)
+layout_mode = 2
+placeholder_text = "Your Name"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Name/NameInput" unique_id=1981529848]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -13.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("6_0lox0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Initials" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=602088307]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Initials" unique_id=1646718849]
+layout_mode = 2
+text = "Initials"
+label_settings = SubResource("LabelSettings_sujoi")
+vertical_alignment = 1
+
+[node name="InitialsInput" type="TextEdit" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Initials" unique_id=647967654]
+custom_minimum_size = Vector2(0, 51.42)
+layout_mode = 2
+placeholder_text = "optional"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Initials/InitialsInput" unique_id=1776231880]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -13.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("6_0lox0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeightWeight" type="HBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=2007355912]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Height" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HeightWeight" unique_id=1132921544]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HeightWeight/Height" unique_id=1361267308]
+layout_mode = 2
+text = "Height (cm)"
+label_settings = SubResource("LabelSettings_y5rml")
+vertical_alignment = 1
+
+[node name="HeightInput" type="SpinBox" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HeightWeight/Height" unique_id=883533484]
+layout_mode = 2
+max_value = 10000.0
+alignment = 1
+
+[node name="Weight" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HeightWeight" unique_id=1021252074]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HeightWeight/Weight" unique_id=1554291144]
+layout_mode = 2
+text = "Weight (kg)"
+label_settings = SubResource("LabelSettings_y5rml")
+vertical_alignment = 1
+
+[node name="WeightInput" type="SpinBox" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HeightWeight/Weight" unique_id=1275600905]
+layout_mode = 2
+max_value = 10000.0
+alignment = 1
+
+[node name="Age" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=2015014492]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Age" unique_id=1306443942]
+layout_mode = 2
+text = "Age (years)"
+label_settings = SubResource("LabelSettings_y5rml")
+vertical_alignment = 1
+
+[node name="AgeInput" type="SpinBox" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Age" unique_id=805634684]
+layout_mode = 2
+max_value = 10000.0
+alignment = 1
+
+[node name="BiologicalSex" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=1882268906]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/BiologicalSex" unique_id=42023369]
+layout_mode = 2
+text = "Biological Sex"
+label_settings = SubResource("LabelSettings_y5rml")
+vertical_alignment = 1
+
+[node name="Sex" type="HBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/BiologicalSex" unique_id=540196171]
+layout_mode = 2
+alignment = 1
+
+[node name="Male" type="Button" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/BiologicalSex/Sex" unique_id=2078833848]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Male"
+
+[node name="Female" type="Button" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/BiologicalSex/Sex" unique_id=1067161196]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Female"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=948928844]
+custom_minimum_size = Vector2(0, 32.525)
+layout_mode = 2
+size_flags_stretch_ratio = 0.2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8gvxs")
+
+[node name="Enter" type="Button" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1571364749]
+layout_mode = 2
+text = "Enter"
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1808775770]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3nlvr")
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/CreateProfile/HBoxContainer" unique_id=481975761]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gul1j")
+
+[connection signal="pressed" from="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/BiologicalSex/Sex/Male" to="." method="_on_male_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/BiologicalSex/Sex/Female" to="." method="_on_female_pressed"]
+[connection signal="pressed" from="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Enter" to="." method="_on_enter_pressed"]

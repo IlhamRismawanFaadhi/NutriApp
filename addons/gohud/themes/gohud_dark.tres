@@ -23,17 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://v0fynlk021e0" path="res://addons/gohud/assets/dark/toggle_on_disabled_mirrored.svg" id="toggle_on_disabled_mirrored"]
 [ext_resource type="Texture2D" uid="uid://cto0yar3wno87" path="res://addons/gohud/assets/dark/toggle_on_mirrored.svg" id="toggle_on_mirrored"]
 
-[sub_resource type="StyleBoxFlat" id="btn_disabled"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlseb"]
 content_margin_left = 16.0
 content_margin_top = 10.0
 content_margin_right = 16.0
 content_margin_bottom = 10.0
-bg_color = Color(0.109804, 0.133333, 0.176471, 0.55)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.321606, 0.385234, 0.48114, 0.35)
+bg_color = Color(0, 0.7294118, 0.3647059, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -693,6 +688,22 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="btn_disabled"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0.109804, 0.133333, 0.176471, 0.55)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.321606, 0.385234, 0.48114, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="StyleBoxFlat" id="panel_solid"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -795,8 +806,8 @@ corner_radius_bottom_left = 8
 [resource]
 default_font_size = 16
 BoxContainer/constants/separation = 12
-Button/colors/font_color = Color(0.94902, 0.960784, 0.976471, 1)
-Button/colors/font_disabled_color = Color(0.625622, 0.659656, 0.717515, 1)
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
 Button/colors/font_focus_color = Color(0.94902, 0.960784, 0.976471, 1)
 Button/colors/font_hover_color = Color(0.94902, 0.960784, 0.976471, 1)
 Button/colors/font_hover_pressed_color = Color(0.337255, 0.8, 0.94902, 1)
@@ -809,7 +820,7 @@ Button/colors/icon_normal_color = Color(0.658824, 0.701961, 0.760784, 1)
 Button/colors/icon_pressed_color = Color(0.337255, 0.8, 0.94902, 1)
 Button/constants/h_separation = 8
 Button/font_sizes/font_size = 16
-Button/styles/disabled = SubResource("btn_disabled")
+Button/styles/disabled = SubResource("StyleBoxFlat_jlseb")
 Button/styles/focus = SubResource("btn_focus")
 Button/styles/hover = SubResource("btn_hover")
 Button/styles/hover_pressed = SubResource("btn_pressed")

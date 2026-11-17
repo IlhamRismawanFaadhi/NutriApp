@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://b7ttqwo8ryfaf"]
 
+[ext_resource type="Script" uid="uid://crnqav0a7ihlf" path="res://Component/AIChat/Script/ai_chat.gd" id="1_hj3oe"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_bht10"]
 font_size = 17
 font_color = Color(0.42806667, 0.8322572, 0, 1)
 
 [node name="AIChat" type="PanelContainer" unique_id=1390679697]
+script = ExtResource("1_hj3oe")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1609493478]
 layout_mode = 2
@@ -16,13 +19,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TypeFood" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=505658738]
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=505658738]
 layout_mode = 2
 size_flags_vertical = 3
 text = "NutriAI"
 label_settings = SubResource("LabelSettings_bht10")
 
-[node name="Label2" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=647181402]
+[node name="TextSend" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=647181402]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Hello, what i can for help you?"
