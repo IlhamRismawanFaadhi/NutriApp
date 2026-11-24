@@ -28,6 +28,7 @@ label_settings = SubResource("LabelSettings_bht10")
 [node name="TextSend" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=647181402]
 layout_mode = 2
 size_flags_vertical = 3
+bbcode_enabled = true
 text = "Hello, what i can for help you?"
 fit_content = true
 autowrap_mode = 2

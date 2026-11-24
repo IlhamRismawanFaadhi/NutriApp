@@ -923,6 +923,7 @@ size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="Suggest" type="Control" parent="VBoxContainer/Display" unique_id=1215382027]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1451,7 +1452,6 @@ size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="AiChat" type="Control" parent="VBoxContainer/Display" unique_id=1664417278]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

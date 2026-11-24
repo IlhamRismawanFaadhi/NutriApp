@@ -4,6 +4,13 @@ var username_account: StringName
 
 ## ==+== Network ==+== ##
 var tkpi_http_request: HTTPRequest
+var ai_http_request: HTTPRequest
+# Gunakan /webhook-test/ai-chat saat mode Execute, ganti ke /webhook/ai-chat jika sudah Publish
+const N8N_WEBHOOK_URL: String = "https://ilhamrf.app.n8n.cloud/webhook-test/ai-chat"
+
+## ==+== Camera ==+== ##
+var camera_texture: CameraTexture
+var active_camera_feed: CameraFeed
 
 ## ==+== Primary Variable ==+== ##
 #maximum
@@ -158,6 +165,10 @@ func _ready() -> void:
 	add_child(tkpi_http_request)
 	tkpi_http_request.request_completed.connect(_on_tkpi_request_completed)
 
+	ai_http_request = HTTPRequest.new()
+	add_child(ai_http_request)
+	ai_http_request.request_completed.connect(_on_ai_request_completed)
+
 	name_user_label.text = Global.account_name_user
 	
 	set_maximum_target()
@@ -166,7 +177,9 @@ func _ready() -> void:
 	adding_suggest_food(5)
 	are_added_log_is_empty()
 	set_bmi()
-func chage_display_by_index(index: int)->void:
+	setup_android_camera()
+
+func chage_display_by_index(index: int) -> void:
 	if index <= %Display.get_child_count():
 		for i in range(%Display.get_child_count()):
 			if i == index:
@@ -175,6 +188,37 @@ func chage_display_by_index(index: int)->void:
 			else:
 				%Display.get_child(i).visible = false
 				%Menu.get_child(i).disabled = false
+	
+	# Aktifkan kamera hanya saat berada di tab Scan (index 2)
+	if is_instance_valid(active_camera_feed):
+		active_camera_feed.feed_is_active = (index == 2)
+
+## === Camera Setup Function === ##
+func setup_android_camera() -> void:
+	if OS.get_name() == "Android":
+		OS.request_permissions()
+	
+	CameraServer.monitoring_feeds = true
+	
+	if CameraServer.get_feed_count() > 0:
+		_aktifkan_kamera(CameraServer.get_feed(0))
+	else:
+		if not CameraServer.camera_feed_added.is_connected(_on_camera_feed_added):
+			CameraServer.camera_feed_added.connect(_on_camera_feed_added)
+
+func _on_camera_feed_added(id: int) -> void:
+	var feed := CameraServer.get_feed(id)
+	if feed and feed.get_position() == CameraFeed.FEED_BACK:
+		_aktifkan_kamera(feed)
+
+func _aktifkan_kamera(feed: CameraFeed) -> void:
+	active_camera_feed = feed
+	# Hanya aktifkan jika saat ini sedang di tab Scan (index 2)
+	active_camera_feed.feed_is_active = %Display.get_child(2).visible
+	
+	camera_texture = CameraTexture.new()
+	camera_texture.camera_feed_id = active_camera_feed.get_id()
+	photo.texture = camera_texture
 
 ## === page Home function === ##
 func _on_home_pressed() -> void:
@@ -341,24 +385,67 @@ func _on_ai_chat_pressed() -> void:
 	chage_display_by_index(3)
 
 func add_human_text(text: String) -> void:
+	if text.strip_edges().is_empty():
+		return
+		
 	var human_chat_instanciate := preload_human_chat.instantiate()
 	human_chat_instanciate.sends_text = text
 	chat_panel.add_child(human_chat_instanciate)
+	
+	send_chat_to_n8n(text)
+
+func add_ai_text(text: String) -> void:
+	var ai_chat_instanciate := preload_ai_chat.instantiate()
+	ai_chat_instanciate.sends_text = text
+	chat_panel.add_child(ai_chat_instanciate)
+
+func send_chat_to_n8n(user_message: String) -> void:
+	var payload: Dictionary = {
+		"username": Global.account_name_user,
+		"message": user_message,
+		"calories": calories,
+		"maximum_calories": maximum_calories,
+		"protein": protein,
+		"maximum_protein": maximum_protein,
+		"carbo": carbo,
+		"maximum_carbo": maximum_carbo,
+		"fat": fat,
+		"maximum_fat": maximum_fat,
+		"water": water,
+		"maximum_water": maximum_water
+	}
+	
+	var headers: PackedStringArray = ["Content-Type: application/json"]
+	var json_body: String = JSON.stringify(payload)
+	
+	ai_http_request.cancel_request()
+	var err := ai_http_request.request(N8N_WEBHOOK_URL, headers, HTTPClient.METHOD_POST, json_body)
+	if err != OK:
+		add_ai_text("Gagal menghubungi server AI.")
+
+func _on_ai_request_completed(result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
+	if result != HTTPRequest.RESULT_SUCCESS or response_code != 200:
+		add_ai_text("Terjadi kesalahan koneksi (Code: " + str(response_code) + ")")
+		return
+		
+	var parsed = JSON.parse_string(body.get_string_from_utf8())
+	if typeof(parsed) == TYPE_DICTIONARY and parsed.has("reply"):
+		add_ai_text(str(parsed["reply"]))
+	else:
+		add_ai_text("Format balasan dari AI tidak dikenali.")
 
 func _on_suggest_button_1_pressed() -> void:
-	var suggest_chat: String = "Explain my day"
-	add_human_text(suggest_chat)
+	add_human_text("Explain my day")
 
 func _on_suggest_button_2_pressed() -> void:
-	var suggest_chat: String = "Suggest the dinner"
-	add_human_text(suggest_chat)
+	add_human_text("Suggest the dinner")
 
 func _on_suggest_button_3_pressed() -> void:
-	var suggest_chat: String = "What im low on?"
-	add_human_text(suggest_chat)
+	add_human_text("What im low on?")
 
 func _on_send_text_pressed() -> void:
 	add_human_text(text_writing.text)
+	text_writing.text = ""
 
 ## === page login function === ##
 func _on_profile_pressed() -> void:
