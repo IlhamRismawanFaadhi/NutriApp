@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c4qmwpkrkhpb4"]
 
-[ext_resource type="Texture2D" uid="uid://cw2plgnuyavts" path="res://Asset/Image/NasiGoreng.jpg" id="1_km2r4"]
 [ext_resource type="Script" uid="uid://dunijsifjyq53" path="res://Component/FoodSuggestPanel/Script/food_suggest_panel.gd" id="1_xu600"]
 [ext_resource type="FontFile" uid="uid://drhtif4f5mw2" path="res://Asset/Font/Ubuntu/Ubuntu-Regular.ttf" id="2_xu600"]
 
@@ -63,7 +62,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_km2r4")
 [node name="FoodTexture" type="TextureRect" parent="Container" unique_id=2003323562]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_km2r4")
 expand_mode = 1
 stretch_mode = 5
 
@@ -119,3 +117,5 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_6mq66")
 [node name="SelectButton" type="Button" parent="." unique_id=1331073651]
 layout_mode = 2
 flat = true
+
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

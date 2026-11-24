@@ -9,7 +9,6 @@
 [ext_resource type="FontFile" uid="uid://drhtif4f5mw2" path="res://Asset/Font/Ubuntu/Ubuntu-Regular.ttf" id="5_p3fls"]
 [ext_resource type="FontVariation" uid="uid://cl1ghml6fsl2n" path="res://Asset/Font/tress_font/UiFont.tres" id="6_ynj3n"]
 [ext_resource type="Texture2D" uid="uid://cw2plgnuyavts" path="res://Asset/Image/NasiGoreng.jpg" id="7_ynj3n"]
-[ext_resource type="PackedScene" uid="uid://c4qmwpkrkhpb4" path="res://Component/FoodSuggestPanel/food_suggest_panel.tscn" id="8_pfg36"]
 [ext_resource type="Texture2D" uid="uid://08r5rb57byle" path="res://Asset/Image/NasiPadang.jpg" id="9_l4ygr"]
 [ext_resource type="Texture2D" uid="uid://b3wyyrwnj0df6" path="res://addons/gohud/icons/default/search.svg" id="9_prsyg"]
 [ext_resource type="FontFile" uid="uid://dvfnuih886qyx" path="res://Asset/Font/Alan_Sans/AlanSans-VariableFont_wght.ttf" id="9_yygku"]
@@ -240,6 +239,15 @@ font = SubResource("FontVariation_77i40")
 font_size = 14
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_biw1d"]
+base_font = ExtResource("5_p3fls")
+variation_embolden = 0.4
+
+[sub_resource type="LabelSettings" id="LabelSettings_053wg"]
+font = SubResource("FontVariation_biw1d")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ygr"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -292,6 +300,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 9.85
 
 [node name="Home" type="Control" parent="VBoxContainer/Display" unique_id=484896149]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -360,7 +369,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Display/Home/HBoxContainer/VBoxContainer" unique_id=979487772]
-clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -915,7 +923,6 @@ size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="Suggest" type="Control" parent="VBoxContainer/Display" unique_id=1215382027]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1131,9 +1138,6 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="FoodSuggestPanel" parent="VBoxContainer/Display/Suggest/HBoxContainer/VBoxContainer/ScrollContainer/ParentFoodSuggest" unique_id=129265870 instance=ExtResource("8_pfg36")]
-layout_mode = 2
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Display/Suggest/HBoxContainer" unique_id=160915462]
 layout_mode = 2
@@ -1801,11 +1805,30 @@ size_flags_vertical = 3
 layout_mode = 2
 text = "Age (years)"
 label_settings = SubResource("LabelSettings_nwgtx")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AgeInput" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer/Age" unique_id=217502052]
 layout_mode = 2
 max_value = 10000.0
+alignment = 1
+
+[node name="WorkoutActivity" type="VBoxContainer" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer" unique_id=1186327890]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer/WorkoutActivity" unique_id=561958135]
+layout_mode = 2
+text = "Workout activity per pweek"
+label_settings = SubResource("LabelSettings_053wg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WorkoutActivityPerWeek" type="SpinBox" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer/WorkoutActivity" unique_id=1418244467]
+layout_mode = 2
+max_value = 7.0
+rounded = true
 alignment = 1
 
 [node name="CalculateBMIButton" type="Button" parent="VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer" unique_id=1396467924]
@@ -1960,7 +1983,6 @@ size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bhunq")
 
 [node name="Panel" type="PanelContainer" parent="VBoxContainer" unique_id=1903928420]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.05

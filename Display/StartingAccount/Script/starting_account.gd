@@ -6,6 +6,7 @@ var sex_user: String
 @onready var height_input:SpinBox= $VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HeightWeight/Height/HeightInput
 @onready var weight_input:SpinBox= $VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/HeightWeight/Weight/WeightInput
 @onready var age_input:SpinBox= $VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/Age/AgeInput
+@onready var workout_activity_per_week: SpinBox = $VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/WorkoutActivity/WorkoutActivityPerWeek
 @onready var button_male:Button= $VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/BiologicalSex/Sex/Male
 @onready var button_female:Button= $VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/BiologicalSex/Sex/Female
 # Called when the node enters the scene tree for the first time.
@@ -31,6 +32,7 @@ func _on_enter_pressed() -> void:
 		Global.account_height_user = height_input.value
 		Global.account_age_user = age_input.value
 		Global.account_sex_user = sex_user
+		Global.account_workout_per_week = workout_activity_per_week.value
 		get_tree().change_scene_to_file("res://Display/MainMenu/main_menu.tscn")
 	else:
 		print("invalid to process")

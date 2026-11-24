@@ -346,6 +346,23 @@ layout_mode = 2
 max_value = 10000.0
 alignment = 1
 
+[node name="WorkoutActivity" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=392479458]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/WorkoutActivity" unique_id=792672298]
+layout_mode = 2
+text = "Workout activity / week"
+label_settings = SubResource("LabelSettings_y5rml")
+vertical_alignment = 1
+
+[node name="WorkoutActivityPerWeek" type="SpinBox" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer/WorkoutActivity" unique_id=1113129132]
+layout_mode = 2
+max_value = 7.0
+rounded = true
+alignment = 1
+
 [node name="BiologicalSex" type="VBoxContainer" parent="VBoxContainer/Display/CreateProfile/HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer/Progress/VBoxContainer" unique_id=1882268906]
 layout_mode = 2
 size_flags_horizontal = 3

@@ -1,6 +1,10 @@
 extends Control
 ## ==+== Account Variable ==+== ##
 var username_account: StringName
+
+## ==+== Network ==+== ##
+var tkpi_http_request: HTTPRequest
+
 ## ==+== Primary Variable ==+== ##
 #maximum
 var maximum_calories : float : 
@@ -147,18 +151,24 @@ var meals: int
 @onready var height_input_spin_box:SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer/HeightWeight/Height/HeightInput"
 @onready var weight_input_spin_box:SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer/HeightWeight/Weight/WeightInput"
 @onready var age_input_spin_box:SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer/Age/AgeInput"
+@onready var workout_activity_per_week:SpinBox = $"VBoxContainer/Display/Profile/HBoxContainer/VBoxContainer/TabContainer/Calculate BMI/VBoxContainer/WorkoutActivity/WorkoutActivityPerWeek"
+
 func _ready() -> void:
+	tkpi_http_request = HTTPRequest.new()
+	add_child(tkpi_http_request)
+	tkpi_http_request.request_completed.connect(_on_tkpi_request_completed)
+
 	name_user_label.text = Global.account_name_user
+	
 	set_maximum_target()
 	chage_display_by_index(0)
 	food_or_drink_reset()
 	adding_suggest_food(5)
 	are_added_log_is_empty()
-	
+	set_bmi()
 func chage_display_by_index(index: int)->void:
-	pass
 	if index <= %Display.get_child_count():
-		for i  in range(%Display.get_child_count()):
+		for i in range(%Display.get_child_count()):
 			if i == index:
 				%Display.get_child(i).visible = true
 				%Menu.get_child(i).disabled = true
@@ -169,11 +179,11 @@ func chage_display_by_index(index: int)->void:
 ## === page Home function === ##
 func _on_home_pressed() -> void:
 	chage_display_by_index(0)
-	pass # Replace with function body.
 
 func _on_reset_hydration_pressed() -> void:
 	water = water_progress_bar.min_value
 	drink_amout_spin_box.value = 0
+
 func _on_auto_add_hydration_250_pressed() -> void:
 	water += 250
 
@@ -184,13 +194,11 @@ func _on_add_drink_amount_pressed() -> void:
 	water += drink_amout_spin_box.value
 
 func are_added_log_is_empty() -> void:
-	# Pastikan node sudah siap sebelum diakses
 	if not is_instance_valid(added_log) or not is_instance_valid(empty_log_warning_label):
 		return
 		
 	var jumlah_item: int = 0
 	for child in added_log.get_children():
-		# Hitung hanya node yang BUKAN EmptyLog
 		if child != empty_log_warning_label:
 			jumlah_item += 1
 			
@@ -205,23 +213,87 @@ func _on_added_log_child_exiting_tree(_node: Node) -> void:
 ## === page Suggested function === ##
 func _on_suggested_pressed() -> void:
 	chage_display_by_index(1)
-	pass # Replace with function body.
-func adding_suggest_food(how_much: int)-> void:
-	if how_much > 0:
-		for i in range(how_much):
-			var food_suggest_card_instanciate:= preload_food_suggested_panel.instantiate()
-			food_suggest_card_instanciate.food_image_url = "https://1.bp.blogspot.com/-frPXLhHsX1o/YGH-vVXAdtI/AAAAAAAAAQc/rFFQBIqzF-sEPYUiGLOUyb-KetyM7haWACLcBGAsYHQ/s2048/IMG20210227100704.jpg"
-			food_suggest_card_instanciate.type_food_value = "Dinner"
-			food_suggest_card_instanciate.name_food_value = "Hasi Goreng"
-			food_suggest_card_instanciate.composition_value = "30g protein - 58g carb - 12g fat"# 30g protein - 58g carb - 12g fat
-			food_suggest_card_instanciate.calories_value = i
+	adding_suggest_food(5)
 
-			parent_food_suggest.add_child(food_suggest_card_instanciate)
+func adding_suggest_food(how_much: int) -> void:
+	if how_much <= 0:
+		return
+		
+	var rem_cal: float = max(0.0, maximum_calories - calories)
+	var rem_carbo: float = max(0.0, maximum_carbo - carbo)
+	var rem_fat: float = max(0.0, maximum_fat - fat)
+	
+	var base_url: String = "https://ilhamrismawan.alwaysdata.net/foods"
+	var query_params: PackedStringArray = [
+		"limit=" + str(how_much),
+		"sort=proteins",
+		"order=desc"
+	]
+	
+	if maximum_calories > 0:
+		query_params.append("max_calories=" + str(int(rem_cal)))
+	if maximum_carbo > 0:
+		query_params.append("max_carbohydrate=" + str(int(rem_carbo)))
+	if maximum_fat > 0:
+		query_params.append("max_fat=" + str(int(rem_fat)))
+		
+	var full_url: String = base_url + "?" + "&".join(query_params)
+	
+	tkpi_http_request.cancel_request()
+	var err := tkpi_http_request.request(full_url)
+	if err != OK:
+		print("Gagal memulai HTTPRequest TKPI: ", err)
+
+func _on_tkpi_request_completed(result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
+	if result != HTTPRequest.RESULT_SUCCESS or response_code != 200:
+		print("Error API TKPI. Code: ", response_code)
+		return
+		
+	var json_text: String = body.get_string_from_utf8()
+	var parsed = JSON.parse_string(json_text)
+	
+	if typeof(parsed) != TYPE_DICTIONARY or not parsed.has("data"):
+		print("Format JSON TKPI tidak sesuai")
+		return
+		
+	for child in parent_food_suggest.get_children():
+		child.queue_free()
+		
+	var foods: Array = parsed["data"]
+	for item in foods:
+		var card := preload_food_suggested_panel.instantiate()
+		
+		var f_name: String = str(item.get("name", "Unknown Food"))
+		var f_cal: float = float(item.get("calories", 0))
+		var f_pro: float = float(item.get("proteins", 0))
+		var f_carb: float = float(item.get("carbohydrate", 0))
+		var f_fat: float = float(item.get("fat", 0))
+		
+		var f_img: String = ""
+		if item.get("image") != null:
+			f_img = str(item.get("image"))
+			
+		card.food_image_url = f_img
+		card.name_food_value = f_name
+		card.composition_value = "%.1fg protein - %.1fg carb - %.1fg fat" % [f_pro, f_carb, f_fat]
+		card.protein = f_pro
+		card.carbo = f_carb
+		card.fat = f_fat
+		card.calories_value = f_cal
+		
+		card.texture_makanan_input_from_panel = texture_makanan_input
+		card.nama_makanan_label_from_panel = nama_makanan_label
+		card.protein_gap_label_value_from_panel = protein_gap_label_value
+		card.carbo_left_label_value_from_panel = carbo_left_label_value
+		card.fat_gap_label_value_from_panel = fat_gap_label_value
+		card.calories_gap_label_value_from_panel = calories_gap_label_value
+		
+		parent_food_suggest.add_child(card)
 
 ## === page Scan function === ##
 func _on_scan_pressed() -> void:
 	chage_display_by_index(2)
-	pass # Replace with function body.
+
 func food_or_drink_reset()->void:
 	food_name_line_edit.text = str("_")
 	eating_time_spin_box.value = 0
@@ -234,7 +306,7 @@ func food_or_drink_assign() ->void:
 	calories += calorie_value_spin_box.value
 	protein += protein_value_spin_box.value
 	carbo += carbo_value_spin_box.value
-	fat+= fat_value_spin_box.value
+	fat += fat_value_spin_box.value
 
 func _on_breakfast_pressed() -> void:
 	breakfast_button.disabled = true
@@ -267,14 +339,16 @@ func _on_add_to_today_pressed() -> void:
 ## === page Chat function === ##
 func _on_ai_chat_pressed() -> void:
 	chage_display_by_index(3)
-	pass # Replace with function body.
+
 func add_human_text(text: String) -> void:
 	var human_chat_instanciate := preload_human_chat.instantiate()
 	human_chat_instanciate.sends_text = text
 	chat_panel.add_child(human_chat_instanciate)
+
 func _on_suggest_button_1_pressed() -> void:
 	var suggest_chat: String = "Explain my day"
 	add_human_text(suggest_chat)
+
 func _on_suggest_button_2_pressed() -> void:
 	var suggest_chat: String = "Suggest the dinner"
 	add_human_text(suggest_chat)
@@ -282,13 +356,13 @@ func _on_suggest_button_2_pressed() -> void:
 func _on_suggest_button_3_pressed() -> void:
 	var suggest_chat: String = "What im low on?"
 	add_human_text(suggest_chat)
+
 func _on_send_text_pressed() -> void:
 	add_human_text(text_writing.text)
 
 ## === page login function === ##
 func _on_profile_pressed() -> void:
 	chage_display_by_index(4)
-	pass # Replace with function body.
 
 func _on_reset_goals_pressed() -> void:
 	calories_target_spin_box.value = calories_target_spin_box.min_value
@@ -296,22 +370,91 @@ func _on_reset_goals_pressed() -> void:
 	fat_target_spin_box.value = fat_target_spin_box.min_value
 	protein_target_spin_box.value = protein_target_spin_box.min_value
 	water_target_spin_box.value = water_target_spin_box.min_value
+
 func set_maximum_target() ->void:
 	maximum_calories = calories_target_spin_box.value
 	maximum_carbo = carbo_target_spin_box.value
 	maximum_fat = fat_target_spin_box.value
 	maximum_protein = protein_target_spin_box.value
 	maximum_water = water_target_spin_box.value * 1000
+
 func set_bmi()->void:
 	height_input_spin_box.value = Global.account_height_user
 	weight_input_spin_box.value = Global.account_weight_user
 	age_input_spin_box.value = Global.account_age_user
+	workout_activity_per_week.value = Global.account_workout_per_week
+
+func apply_bmi() -> void:
+	Global.account_height_user = height_input_spin_box.value
+	Global.account_weight_user = weight_input_spin_box.value
+	Global.account_age_user = age_input_spin_box.value
+	Global.account_workout_per_week = workout_activity_per_week.value
+	set_bmi()
+	
+	var height_cm: float = Global.account_height_user
+	var weight_kg: float = Global.account_weight_user
+	var age: float = Global.account_age_user
+	var workouts: float = Global.account_workout_per_week
+	
+	if height_cm <= 0.0 or weight_kg <= 0.0:
+		return
+	
+	var height_m: float = height_cm / 100.0
+	var bmi: float = weight_kg / (height_m * height_m)
+	
+	var bmr: float = (10.0 * weight_kg) + (6.25 * height_cm) - (5.0 * age)
+	if Global.account_sex_user.to_lower() == "male":
+		bmr += 5.0
+	else:
+		bmr -= 161.0
+	
+	var activity_multiplier: float = 1.2
+	if workouts >= 6:
+		activity_multiplier = 1.725
+	elif workouts >= 3:
+		activity_multiplier = 1.55
+	elif workouts >= 1:
+		activity_multiplier = 1.375
+	
+	var tdee: float = bmr * activity_multiplier
+	
+	var target_calories: float = tdee
+	if bmi < 18.5:
+		target_calories += 400.0
+	elif bmi >= 25.0:
+		target_calories -= 500.0
+	elif bmi >= 23.0:
+		target_calories -= 300.0
+	
+	target_calories = max(target_calories, 1200.0)
+	
+	var ideal_weight: float = 22.0 * (height_m * height_m)
+	var ref_weight: float = min(weight_kg, ideal_weight) if bmi >= 25.0 else weight_kg
+	
+	var target_protein: float = ref_weight * 1.4
+	var target_fat: float = (target_calories * 0.25) / 9.0
+	
+	var remaining_calories: float = target_calories - (target_protein * 4.0) - (target_fat * 9.0)
+	var target_carbo: float = max(remaining_calories / 4.0, 50.0)
+	
+	var ml_per_kg: float = 30.0 if age >= 55.0 else 35.0
+	var target_water_liters: float = (weight_kg * ml_per_kg) / 1000.0
+	if workouts >= 3:
+		target_water_liters += 0.5
+	
+	calories_target_spin_box.value = round(target_calories)
+	protein_target_spin_box.value = round(target_protein)
+	fat_target_spin_box.value = round(target_fat)
+	carbo_target_spin_box.value = round(target_carbo)
+	water_target_spin_box.value = snapped(target_water_liters, 0.1)
+	
+	set_maximum_target()
+
 func _on_set_target_pressed() -> void:
 	set_maximum_target()
-func _on_log_out_pressed() -> void:
-	pass # Replace with function body.
-func _on_calculate_bmi_button_pressed() -> void:
-	pass # Replace with function body.
 
-# task to AI:
-# create target_value from bmi with event on "_on_calculate_bmi_button_pressed()" function
+func _on_log_out_pressed() -> void:
+	pass
+
+func _on_calculate_bmi_button_pressed() -> void:
+	apply_bmi()
